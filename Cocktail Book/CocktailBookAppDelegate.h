@@ -15,6 +15,10 @@
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 @property (strong, nonatomic) IBOutlet UITabBarController *myTabBarController;
 
-//@property (strong, nonatomic) CocktailBookViewController *viewController;
+@property (strong, nonatomic) NSArray *cocktails;
+
+- (void)loadCocktails;
+- (void)saveCocktails;
+- (NSArray *)giveMeCocktails;
 
 @end

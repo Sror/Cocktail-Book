@@ -7,16 +7,18 @@
 //
 
 #import "CBCategoriesViewController.h"
+#import "CocktailBookAppDelegate.h"
 
 #define CELL_IDENT @"CategoryListTableViewCell"
 
 @interface CBCategoriesViewController ()
-
+@property (nonatomic) NSArray *cocktails;
 @end
 
 @implementation CBCategoriesViewController
 
 @synthesize categoryList;
+@synthesize cocktails;
 
 - (void)viewDidLoad
 {
@@ -35,18 +37,24 @@
 
 - (void)setupCategories
 {
-    NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:@"Cat 1", @"Cat2", @"Cat3", nil];
+    NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:@"Bubbles", @"Chic", @"Jungle Juice", @"Frou Frou"
+                                                                  @"Tropicana", @"Muddled", @"Club Lounge", @"Mellow"
+                                                                  @"Virginal", nil];
     self.categoryList = [cat copy];
 }
 
 #pragma mark - AppDelegate methods
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
 	[super viewWillAppear:animated];
 	
 	// this UIViewController is about to re-appear, make sure we remove the current selection in our table view
 	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
 	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
+    
+    CocktailBookAppDelegate *appDelegate = (CocktailBookAppDelegate *)[[UIApplication sharedApplication] delegate];
+    cocktails = appDelegate.cocktails;
 }
 
 #pragma mark -

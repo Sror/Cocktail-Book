@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Ruaridh Sinclair Thomson. All rights reserved.
 //
 
+#import "CocktailBookAppDelegate.h"
 #import "CocktailListViewController.h"
 #import "CBCocktailViewController.h"
 #import "CBCocktail.h"
@@ -24,20 +25,23 @@
 @synthesize cocktailView;
 
 // this is called when its tab is first tapped by the user
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
 	[super viewDidLoad];
 	
-	[self populateCocktails];
+	//[self populateCocktails];
     [self.navigationItem setTitle:@"Cocktails"];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
 	[super viewDidUnload];
     
 	self.cocktails = nil;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
@@ -46,23 +50,20 @@
 
 - (void)populateCocktails
 {
-    NSMutableArray *list = [[NSMutableArray alloc] init];
-    CBCocktail *cocktail = [[CBCocktail alloc] initWithName:@"Gin & Tonic" description:@"The classic"];
-    [list addObject:cocktail];
-    cocktail = [[CBCocktail alloc] initWithName:@"Mai Tai" description:@"Smooth tropical drink"];
-    [list addObject:cocktail];
-    
-    cocktails = [list copy];
+    CocktailBookAppDelegate *appDelegate = (CocktailBookAppDelegate *)[[UIApplication sharedApplication] delegate];
+    cocktails = appDelegate.cocktails;
 }
 
 #pragma mark - AppDelegate methods
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
 	[super viewWillAppear:animated];
 	
 	// this UIViewController is about to re-appear, make sure we remove the current selection in our table view
 	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
 	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
+    [self populateCocktails];
 }
 
 #pragma mark -
@@ -152,7 +153,8 @@
 #pragma mark UIViewControllerRotation
 // Deprecated
 /*
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
 	return YES; // support all orientations
 }
  */

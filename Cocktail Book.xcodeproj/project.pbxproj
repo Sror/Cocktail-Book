@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C7C4660165D01B70018FFEE /* FavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C465F165D01B70018FFEE /* FavouritesViewController.m */; };
 		5CCF09C1165B044A005035C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C0165B044A005035C5 /* UIKit.framework */; };
 		5CCF09C3165B044A005035C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C2165B044A005035C5 /* Foundation.framework */; };
 		5CCF09C5165B044A005035C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C4165B044A005035C5 /* CoreGraphics.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C7C465E165D01B70018FFEE /* FavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesViewController.h; sourceTree = "<group>"; };
+		5C7C465F165D01B70018FFEE /* FavouritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesViewController.m; sourceTree = "<group>"; };
 		5CCF09BC165B044A005035C5 /* Cocktail Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cocktail Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCF09C0165B044A005035C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5CCF09C2165B044A005035C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,8 @@
 				5CCF09FE165B9B72005035C5 /* CBCocktail.m */,
 				5CCF09FA165B9B71005035C5 /* CBCategoriesViewController.h */,
 				5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */,
+				5C7C465E165D01B70018FFEE /* FavouritesViewController.h */,
+				5C7C465F165D01B70018FFEE /* FavouritesViewController.m */,
 				5CCF09C7165B044A005035C5 /* Supporting Files */,
 			);
 			path = "Cocktail Book";
@@ -201,6 +206,7 @@
 				5CCF0A01165B9B72005035C5 /* CBCategoriesViewController.m in Sources */,
 				5CCF0A03165B9B72005035C5 /* CBCocktail.m in Sources */,
 				5CCF0A12165BDE0A005035C5 /* CocktailListViewController.m in Sources */,
+				5C7C4660165D01B70018FFEE /* FavouritesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +323,7 @@
 				5CCF09E2165B044A005035C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

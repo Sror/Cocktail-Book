@@ -9,6 +9,7 @@
 #import "CocktailBookAppDelegate.h"
 
 #import "CocktailBookViewController.h"
+#import "CBCocktail.h"
 
 #define kCustomiseTabBar        0   // compile time option to turn a custom tab bar on or off
 #define kDefaultTabSelection    0   // default tab value is 0 (tab #1)
@@ -16,15 +17,24 @@
 #define WHICH_TAB_PREF_KEY      @"kWhichTab"
 #define TAB_BAR_ORDER_PREF_KEY  @"kTabBerOrder"
 
+@interface CocktailBookAppDelegate ()
+
+- (NSString *)cocktailStoragePath;
+@end
+
 @implementation CocktailBookAppDelegate
 
 @synthesize window;
 @synthesize myTabBarController;
+@synthesize cocktails;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    // Set any data we need first
+    [self loadCocktails];
     
     // test for "WHICH_TAB_PREF_KEY" key value
     NSUInteger testValue = [[NSUserDefaults standardUserDefaults] integerForKey:WHICH_TAB_PREF_KEY];
@@ -133,6 +143,7 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     [self saveTabOrder];
+    [self saveCocktails];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -149,9 +160,81 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [self saveTabOrder];
+    [self saveCocktails];
 }
 
 #pragma mark - Multitasking
+
+- (void)loadCocktails
+{
+    NSArray *coc = [[NSArray alloc] initWithContentsOfFile:[self cocktailStoragePath]];
+    NSMutableArray *cocs = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *dic in coc) {
+        CBCocktail *ct = [[CBCocktail alloc] initFromDictionary:dic];
+        [cocs addObject:ct];
+    }
+    
+    cocktails = [cocs copy];
+    
+    /*
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    CBCocktail *cocktail1 = [[CBCocktail alloc] initWithName:@"Classic Champagne Cocktail" description:@"Fashions come and fashions go but the true classic is untouchable."];
+    NSDictionary *ing1 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"1 cube", @"sugar", @"nil", nil]
+                                                             forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
+    NSDictionary *ing2 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"dash", @"angostura bitters", @"nil", nil]
+                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
+    NSDictionary *ing3 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"30 ml (1 oz)", @"brandy", @"nil", nil]
+                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
+    NSDictionary *ing4 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"nil", @"chilled Champagne of sparkling wine", @"nil", nil]
+                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
+    NSArray *ings = [[NSArray alloc] initWithObjects:ing1, ing2, ing3, ing4, nil];
+    cocktail1.ingredients = ings;
+    cocktail1.drinkType = @"Champagne and wine";
+    cocktail1.category = @"Bubbles";
+    cocktail1.method = @"Place the sugar cube in a chilled Champagne flute. Add the bitters, then the brandy. Slowly top up with Champagne or sparkling wine.";
+    cocktail1.isFavourite = NO;
+    cocktail1.howManyIServe = [NSNumber numberWithInt:1];
+    [list addObject:cocktail1];
+    
+    CBCocktail *cocktail2 = [[CBCocktail alloc] initWithName:@"Dry Martini" description:@"Proffer a tray of these and there won't be a dry eye in the house."];
+    NSDictionary *ing12 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"nil", @"ice cubes", @"nil", nil]
+                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
+    NSDictionary *ing22 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"1 teaspoon", @"dry vermouth", @"nil", nil]
+                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
+    NSDictionary *ing32 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"90 ml (3 oz)", @"gin", @"nil", nil]
+                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
+    NSDictionary *ing42 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"nil", @"green olive or a lemon twist", @"nil", nil]
+                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
+    NSArray *ings2 = [[NSArray alloc] initWithObjects:ing12, ing22, ing32, ing42, nil];
+    cocktail2.ingredients = ings2;
+    cocktail2.drinkType = @"gin";
+    cocktail2.category = @"Chic";
+    cocktail2.method = @"Half-fill a mixing glass with ice. Add the dry vermouth, stir to coat the ice, then strain into a chilled martini glass. Garnish with a green olive or a twist of lemon.";
+    cocktail2.isFavourite = NO;
+    cocktail2.howManyIServe = [NSNumber numberWithInt:1];
+    [list addObject:cocktail2];
+    
+    cocktails = [list copy];
+     */
+    
+}
+
+- (void)saveCocktails
+{
+    NSMutableArray *coc = [[NSMutableArray alloc] init];
+    
+    for (CBCocktail *ct in cocktails) {
+        NSDictionary *dic = [ct dictionaryForCocktail];
+        [coc addObject:dic];
+    }
+    [coc writeToFile:[self cocktailStoragePath] atomically:YES];
+}
+
+- (NSArray *)giveMeCocktails
+{
+    return [cocktails copy];
+}
 
 - (void)saveTabOrder
 {
@@ -173,6 +256,14 @@
 	}
 	
 	[[NSUserDefaults standardUserDefaults] setObject:classNames forKey:TAB_BAR_ORDER_PREF_KEY];
+}
+
+- (NSString *)cocktailStoragePath
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    NSString *storagePath = [documentDirectory stringByAppendingPathComponent:@"cocktails.archive"];
+    return storagePath;
 }
 
 #pragma mark -

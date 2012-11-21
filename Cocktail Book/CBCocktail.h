@@ -10,10 +10,19 @@
 
 @interface CBCocktail : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *desciption;
-@property (nonatomic, copy) NSDictionary *ingredients;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *desciption;
+@property (nonatomic) NSArray *ingredients;
+@property (nonatomic) NSString *method;
+@property (nonatomic) NSString *drinkType;
+@property (nonatomic) NSString *category;
+@property (nonatomic) NSNumber *howManyIServe;
+
+@property (nonatomic) BOOL isFavourite;
 
 - (id)initWithName:(NSString *)n description:(NSString *)desc;
+- (id)initFromDictionary:(NSDictionary *)dict;
+
+- (NSDictionary *)dictionaryForCocktail;
 
 @end
