@@ -167,7 +167,17 @@
 
 - (void)loadCocktails
 {
-    NSArray *coc = [[NSArray alloc] initWithContentsOfFile:[self cocktailStoragePath]];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    
+    NSArray *coc;
+    if ([manager fileExistsAtPath:[self cocktailStoragePath]]) {
+        coc = [[NSArray alloc] initWithContentsOfFile:[self cocktailStoragePath]];
+    } else {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"cocktails" ofType:@"xml"];
+        NSLog(@"%@",filePath);
+        coc = [[NSArray alloc] initWithContentsOfFile:filePath];
+    }
+    
     NSMutableArray *cocs = [[NSMutableArray alloc] init];
     
     for (NSDictionary *dic in coc) {
@@ -176,48 +186,6 @@
     }
     
     cocktails = [cocs copy];
-    
-    /*
-    NSMutableArray *list = [[NSMutableArray alloc] init];
-    CBCocktail *cocktail1 = [[CBCocktail alloc] initWithName:@"Classic Champagne Cocktail" description:@"Fashions come and fashions go but the true classic is untouchable."];
-    NSDictionary *ing1 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"1 cube", @"sugar", @"nil", nil]
-                                                             forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
-    NSDictionary *ing2 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"dash", @"angostura bitters", @"nil", nil]
-                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
-    NSDictionary *ing3 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"30 ml (1 oz)", @"brandy", @"nil", nil]
-                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
-    NSDictionary *ing4 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"nil", @"chilled Champagne of sparkling wine", @"nil", nil]
-                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
-    NSArray *ings = [[NSArray alloc] initWithObjects:ing1, ing2, ing3, ing4, nil];
-    cocktail1.ingredients = ings;
-    cocktail1.drinkType = @"Champagne and wine";
-    cocktail1.category = @"Bubbles";
-    cocktail1.method = @"Place the sugar cube in a chilled Champagne flute. Add the bitters, then the brandy. Slowly top up with Champagne or sparkling wine.";
-    cocktail1.isFavourite = NO;
-    cocktail1.howManyIServe = [NSNumber numberWithInt:1];
-    [list addObject:cocktail1];
-    
-    CBCocktail *cocktail2 = [[CBCocktail alloc] initWithName:@"Dry Martini" description:@"Proffer a tray of these and there won't be a dry eye in the house."];
-    NSDictionary *ing12 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"nil", @"ice cubes", @"nil", nil]
-                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
-    NSDictionary *ing22 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"1 teaspoon", @"dry vermouth", @"nil", nil]
-                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
-    NSDictionary *ing32 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"90 ml (3 oz)", @"gin", @"nil", nil]
-                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
-    NSDictionary *ing42 = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:@"nil", @"green olive or a lemon twist", @"nil", nil]
-                                                       forKeys:[[NSArray alloc] initWithObjects:@"quantity", @"name", @"note", nil]];
-    NSArray *ings2 = [[NSArray alloc] initWithObjects:ing12, ing22, ing32, ing42, nil];
-    cocktail2.ingredients = ings2;
-    cocktail2.drinkType = @"gin";
-    cocktail2.category = @"Chic";
-    cocktail2.method = @"Half-fill a mixing glass with ice. Add the dry vermouth, stir to coat the ice, then strain into a chilled martini glass. Garnish with a green olive or a twist of lemon.";
-    cocktail2.isFavourite = NO;
-    cocktail2.howManyIServe = [NSNumber numberWithInt:1];
-    [list addObject:cocktail2];
-    
-    cocktails = [list copy];
-     */
-    
 }
 
 - (void)saveCocktails
@@ -229,11 +197,6 @@
         [coc addObject:dic];
     }
     [coc writeToFile:[self cocktailStoragePath] atomically:YES];
-}
-
-- (NSArray *)giveMeCocktails
-{
-    return [cocktails copy];
 }
 
 - (void)saveTabOrder

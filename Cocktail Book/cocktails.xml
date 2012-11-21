@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+        <key>bartendersTip</key>
+        <string>nil</string>
+		<key>category</key>
+		<string>Bubbles</string>
+		<key>description</key>
+		<string>Fashions come and fashions go but the true classic is untouchable.</string>
+		<key>drinkType</key>
+		<string>Champagne and wine</string>
+		<key>ingredients</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>sugar</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>1 cube</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>angostura bitters</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>dash</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>brandy</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>30 ml (1 oz)</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>chilled Champagne of sparkling wine</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>nil</string>
+			</dict>
+		</array>
+		<key>method</key>
+		<string>Place the sugar cube in a chilled Champagne flute. Add the bitters, then the brandy. Slowly top up with Champagne or sparkling wine.</string>
+		<key>name</key>
+		<string>Classic Champagne Cocktail</string>
+		<key>numberserved</key>
+		<string>1</string>
+        <key>pageInBook</key>
+        <string>22</string>
+	</dict>
+	<dict>
+        <key>bartendersTip</key>
+        <string>nil</string>
+		<key>category</key>
+		<string>Chic</string>
+		<key>description</key>
+		<string>Proffer a tray of these and there won't be a dry eye in the house.</string>
+		<key>drinkType</key>
+		<string>gin</string>
+		<key>ingredients</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>ice cubes</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>nil</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>dry vermouth</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>1 teaspoon</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>gin</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>90 ml (3 oz)</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>green olive or a lemon twist</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>nil</string>
+			</dict>
+		</array>
+		<key>method</key>
+		<string>Half-fill a mixing glass with ice. Add the dry vermouth, stir to coat the ice, then strain into a chilled martini glass. Garnish with a green olive or a twist of lemon.</string>
+		<key>name</key>
+		<string>Dry Martini</string>
+		<key>numberserved</key>
+		<string>1</string>
+        <key>pageInBook</key>
+        <string>44</string>
+	</dict>
+    <dict>
+        <key>bartendersTip</key>
+        <string>Some people like to add mint leaves and cucumber slices.</string>
+		<key>category</key>
+		<string>Jungle Juice</string>
+		<key>description</key>
+		<string>Family celebrations call for a certain calibre of drink. Here's something that will keep everybody happy.</string>
+		<key>drinkType</key>
+		<string>Pimm's</string>
+		<key>ingredients</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>orange juice</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>375 ml (13 oz/1+1/2 cups)</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ice cubes</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>nil</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Pimm's No. 1</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>400 ml (14 oz)</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>bourbon</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>400 ml (14 oz)</string>
+			</dict>
+            <dict>
+				<key>name</key>
+				<string>sweet vermouth</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>185 ml (6 oz)</string>
+			</dict>
+            <dict>
+				<key>name</key>
+				<string>white rum</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>185 ml (6 oz)</string>
+			</dict>
+            <dict>
+				<key>name</key>
+				<string>Champagne or sparkling wine</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>1 bottle</string>
+			</dict>
+            <dict>
+				<key>name</key>
+				<string>chopped fresh fruit</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>3 cups</string>
+			</dict>
+		</array>
+		<key>method</key>
+		<string>Freeze 90 ml (3 oz) of the orange juice in an ice-cube tray. Half-fill a punch bowl with ice, then add the Pimm's, bourbon, vermouth, rum, remaining orange juice and the Champagne or sparkling wine. Stir in the fresh fruit and the frozen orange juice ice cubes.</string>
+		<key>name</key>
+		<string>Pimm's Punch</string>
+		<key>numberserved</key>
+		<string>10</string>
+        <key>pageInBook</key>
+        <string>74</string>
+	</dict>
+    <dict>
+        <key>bartendersTip</key>
+        <string>nil</string>
+		<key>category</key>
+		<string>Frou Frou</string>
+		<key>description</key>
+		<string>Greet the glitterati with these jewel-studded jelly shots and watch their jaws drop.</string>
+		<key>drinkType</key>
+		<string>Champagne and wine</string>
+		<key>ingredients</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>gelatine leaf</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>1</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>sugar syrup</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>15 ml (1/2 oz)</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Champagne or sparkling wine</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>120 ml (4 oz)</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>lychees</string>
+				<key>note</key>
+				<string>peeled, seeded and halved</string>
+				<key>quantity</key>
+				<string>3</string>
+			</dict>
+            <dict>
+				<key>name</key>
+				<string>raspberries</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>6</string>
+			</dict>
+		</array>
+		<key>method</key>
+		<string>Soak the gelatine in cold water. Heat the sugar syrup and Champagne or sparkling wine until just hot. Sqeeze the liquid out of the gelatine, add the gelatine to the Champagne mixture and stir until dissolved. Cool, then place half a lychee and a raspberry into 6 shot glasses. Pour in the Champagne mixture and chill for 3 hours, or until set.</string>
+		<key>name</key>
+		<string>Champagne and lychee jelly shots</string>
+		<key>numberserved</key>
+		<string>6</string>
+        <key>pageInBook</key>
+        <string>96</string>
+	</dict>
+</array>
+</plist>

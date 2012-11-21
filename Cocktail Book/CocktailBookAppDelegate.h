@@ -19,6 +19,5 @@
 
 - (void)loadCocktails;
 - (void)saveCocktails;
-- (NSArray *)giveMeCocktails;
 
 @end

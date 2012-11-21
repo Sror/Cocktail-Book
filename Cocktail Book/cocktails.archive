@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>category</key>
+		<string>Bubbles</string>
+		<key>description</key>
+		<string>Fashions come and fashions go but the true classic is untouchable.</string>
+		<key>drinkType</key>
+		<string>Champagne and wine</string>
+		<key>ingredients</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>sugar</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>1 cube</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>angostura bitters</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>dash</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>brandy</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>30 ml (1 oz)</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>chilled Champagne of sparkling wine</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>nil</string>
+			</dict>
+		</array>
+		<key>method</key>
+		<string>Place the sugar cube in a chilled Champagne flute. Add the bitters, then the brandy. Slowly top up with Champagne or sparkling wine.</string>
+		<key>name</key>
+		<string>Classic Champagne Cocktail</string>
+		<key>numberserved</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>Chic</string>
+		<key>description</key>
+		<string>Proffer a tray of these and there won't be a dry eye in the house.</string>
+		<key>drinkType</key>
+		<string>gin</string>
+		<key>ingredients</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>ice cubes</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>nil</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>dry vermouth</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>1 teaspoon</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>gin</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>90 ml (3 oz)</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>green olive or a lemon twist</string>
+				<key>note</key>
+				<string>nil</string>
+				<key>quantity</key>
+				<string>nil</string>
+			</dict>
+		</array>
+		<key>method</key>
+		<string>Half-fill a mixing glass with ice. Add the dry vermouth, stir to coat the ice, then strain into a chilled martini glass. Garnish with a green olive or a twist of lemon.</string>
+		<key>name</key>
+		<string>Dry Martini</string>
+		<key>numberserved</key>
+		<integer>1</integer>
+	</dict>
+</array>
+</plist>

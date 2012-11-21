@@ -10,4 +10,6 @@
 
 @interface FavouritesViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic) NSArray *favourites;
+
 @end

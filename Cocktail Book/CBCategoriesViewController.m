@@ -37,8 +37,8 @@
 
 - (void)setupCategories
 {
-    NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:@"Bubbles", @"Chic", @"Jungle Juice", @"Frou Frou"
-                                                                  @"Tropicana", @"Muddled", @"Club Lounge", @"Mellow"
+    NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:@"Bubbles", @"Chic", @"Jungle Juice", @"Frou Frou",
+                                                                  @"Tropicana", @"Muddled", @"Club Lounge", @"Mellow",
                                                                   @"Virginal", nil];
     self.categoryList = [cat copy];
 }

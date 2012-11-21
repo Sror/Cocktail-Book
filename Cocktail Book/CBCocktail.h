@@ -14,9 +14,11 @@
 @property (nonatomic) NSString *desciption;
 @property (nonatomic) NSArray *ingredients;
 @property (nonatomic) NSString *method;
+@property (nonatomic) NSString *bartendersTip;
 @property (nonatomic) NSString *drinkType;
 @property (nonatomic) NSString *category;
-@property (nonatomic) NSNumber *howManyIServe;
+@property (nonatomic) NSString *howManyIServe;
+@property (nonatomic) NSString *pageInBook;
 
 @property (nonatomic) BOOL isFavourite;
 

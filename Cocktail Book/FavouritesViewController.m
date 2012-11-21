@@ -7,12 +7,18 @@
 //
 
 #import "FavouritesViewController.h"
+#import "CocktailBookAppDelegate.h"
+#import "CBCocktail.h"
+
+#define CELL_IDENT @"FavouritesCell"
 
 @interface FavouritesViewController ()
-
+- (void)populateFavourites;
 @end
 
 @implementation FavouritesViewController
+
+@synthesize favourites;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,28 +46,58 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)populateFavourites
+{
+    CocktailBookAppDelegate *appDelegate = (CocktailBookAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSArray *cocktails = appDelegate.cocktails;
+    NSMutableArray *favs = [[NSMutableArray alloc] init];
+    
+    for (CBCocktail *ct in cocktails) {
+        if ([ct isFavourite])
+            [favs addObject:ct];
+    }
+    
+    favourites = [favs copy];
+}
+
+#pragma mark - AppDelegate methods
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	// this UIViewController is about to re-appear, make sure we remove the current selection in our table view
+	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
+	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
+    
+    [self populateFavourites];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSLog(@"count: %i", [favourites count]);
+    return [favourites count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENT];
     
-    // Configure the cell...
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_IDENT];
+    }
+    
+    CBCocktail *cat = [favourites objectAtIndex:[indexPath row]];
+    [[cell textLabel] setText:cat.name];
     
     return cell;
 }

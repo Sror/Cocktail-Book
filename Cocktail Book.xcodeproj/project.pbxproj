@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C7C4660165D01B70018FFEE /* FavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C465F165D01B70018FFEE /* FavouritesViewController.m */; };
+		5C7C4664165D36600018FFEE /* cocktails.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5C7C4663165D36600018FFEE /* cocktails.xml */; };
 		5CCF09C1165B044A005035C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C0165B044A005035C5 /* UIKit.framework */; };
 		5CCF09C3165B044A005035C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C2165B044A005035C5 /* Foundation.framework */; };
 		5CCF09C5165B044A005035C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C4165B044A005035C5 /* CoreGraphics.framework */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		5C7C465E165D01B70018FFEE /* FavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesViewController.h; sourceTree = "<group>"; };
 		5C7C465F165D01B70018FFEE /* FavouritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesViewController.m; sourceTree = "<group>"; };
+		5C7C4663165D36600018FFEE /* cocktails.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cocktails.xml; sourceTree = "<group>"; };
 		5CCF09BC165B044A005035C5 /* Cocktail Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cocktail Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCF09C0165B044A005035C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5CCF09C2165B044A005035C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +123,7 @@
 		5CCF09C7165B044A005035C5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5C7C4663165D36600018FFEE /* cocktails.xml */,
 				5CCF09C8165B044A005035C5 /* Cocktail Book-Info.plist */,
 				5CCF09C9165B044A005035C5 /* InfoPlist.strings */,
 				5CCF09CC165B044A005035C5 /* main.m */,
@@ -189,6 +192,7 @@
 				5CCF09D5165B044A005035C5 /* Default@2x.png in Resources */,
 				5CCF09D7165B044A005035C5 /* Default-568h@2x.png in Resources */,
 				5CCF09DD165B044A005035C5 /* CocktailBookViewController.xib in Resources */,
+				5C7C4664165D36600018FFEE /* cocktails.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

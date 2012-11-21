@@ -18,10 +18,12 @@
 @synthesize desciption;
 @synthesize ingredients;
 @synthesize method;
+@synthesize bartendersTip;
 @synthesize isFavourite;
 @synthesize drinkType;
 @synthesize category;
 @synthesize howManyIServe;
+@synthesize pageInBook;
 
 - (id)initWithName:(NSString *)n description:(NSString *)desc
 {
@@ -42,9 +44,12 @@
         NSArray *ing = [dict objectForKey:@"ingredients"];
         self.ingredients = ing;
         self.method = [dict objectForKey:@"method"];
+        self.bartendersTip = [dict objectForKey:@"bartendersTip"];
         self.drinkType = [dict objectForKey:@"drinkType"];
         self.category = [dict objectForKey:@"category"];
         self.howManyIServe = [dict objectForKey:@"numberserved"];
+        self.pageInBook = [dict objectForKey:@"pageInBook"];
+        self.isFavourite = [[dict objectForKey:@"favourite"] boolValue];
     }
     return self;
 }
@@ -60,6 +65,9 @@
     [dict setObject:drinkType forKey:@"drinkType"];
     [dict setObject:category forKey:@"category"];
     [dict setObject:howManyIServe forKey:@"numberserved"];
+    [dict setObject:bartendersTip forKey:@"bartendersTip"];
+    [dict setObject:pageInBook forKey:@"pageInBook"];
+    [dict setObject:[NSNumber numberWithBool:isFavourite] forKey:@"favourite"];
     
     return [dict copy];
 }
