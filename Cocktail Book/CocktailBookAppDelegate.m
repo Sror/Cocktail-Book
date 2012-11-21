@@ -9,10 +9,6 @@
 #import "CocktailBookAppDelegate.h"
 
 #import "CocktailBookViewController.h"
-#import "CBTabBarViewController.h"
-#import "CBCocktailListNavigationController.h"
-#import "CBCocktailListViewController.h"
-#import "CBCategoriesViewController.h"
 
 #define kCustomiseTabBar        0   // compile time option to turn a custom tab bar on or off
 #define kDefaultTabSelection    0   // default tab value is 0 (tab #1)
@@ -22,28 +18,106 @@
 
 @implementation CocktailBookAppDelegate
 
+@synthesize window;
+@synthesize myTabBarController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    //self.viewController = [[CocktailBookViewController alloc] initWithNibName:@"CocktailBookViewController" bundle:nil];
-    //self.window.rootViewController = self.viewController;
     
-    CBTabBarViewController *tabBar = [[CBTabBarViewController alloc] init];
+    // test for "WHICH_TAB_PREF_KEY" key value
+    NSUInteger testValue = [[NSUserDefaults standardUserDefaults] integerForKey:WHICH_TAB_PREF_KEY];
+	if (testValue == 0) {
+		// since no default values have been set (i.e. no preferences file created), create it here
+		NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:kDefaultTabSelection], WHICH_TAB_PREF_KEY, nil];
+		[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+	}
     
-    CBCocktailListViewController *cocktailList = [[CBCocktailListViewController alloc] init];
-    CBCocktailListNavigationController *cocktailNav = [[CBCocktailListNavigationController alloc] initWithRootViewController:cocktailList];
-    //UITabBarItem *cocktailNavItem = [cocktailNav tabBarItem];
-    //[cocktailNavItem setTitle:@"Cocktails"];
-    cocktailNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Cocktails" image:nil tag:0];
+    // customize the More page's navigation bar color
+	//self.myTabBarController.moreNavigationController.navigationBar.tintColor = [UIColor grayColor];
     
-    //CBCategoriesViewController *categoryList = [[CBCategoriesViewController alloc] init];
-    //CBCocktailListNavigationController *categoryNav = [[CBCocktailListNavigationController alloc] initWithRootViewController:categoryList];
+#if kCustomizeTabBar
+    // use the custom appearance feature found in iOS 5.0 or later by customizing the
+    // appearance of our UITabBar.
+    self.myTabBarController.tabBar.tintColor = [UIColor darkGrayColor];
+    self.myTabBarController.tabBar.selectedImageTintColor = [UIColor yellowColor];
+    // note:
+    // 1) you can also apply additional custom appearance to UITabBar using:
+    // "backgroundImage" and "selectionIndicatorImage"
+    // 2) you can also customize the appearance of individual UITabBarItems as well.
+#endif
     
-    NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects:cocktailNav, nil];
-    [tabBar setViewControllers:viewControllers animated:NO];
+    /*
+    // restore the tab-order from prefs
+	NSArray* classNames = [[NSUserDefaults standardUserDefaults] arrayForKey:TAB_BAR_ORDER_PREF_KEY];
+	if (classNames.count > 0)
+	{
+		NSMutableArray* controllers = [[NSMutableArray alloc] init];
+		for (NSString* className in classNames)
+		{
+			for (UIViewController* controller in self.myTabBarController.viewControllers)
+			{
+				NSString* controllerClassName = nil;
+				
+				if ([controller isKindOfClass:[UINavigationController class]])
+				{
+					controllerClassName = NSStringFromClass([[(UINavigationController*)controller topViewController] class]);
+				}
+				else
+				{
+					controllerClassName = NSStringFromClass([controller class]);
+				}
+				
+				if ([className isEqualToString:controllerClassName])
+				{
+					[controllers addObject:controller];
+					break;
+				}
+			}
+		}
+		
+		if (controllers.count == self.myTabBarController.viewControllers.count)
+		{
+			self.myTabBarController.viewControllers = controllers;
+		}
+	}
+	*/
     
-    self.window.rootViewController = tabBar;
+    /*
+	// re-store previously selected tab from prefs
+	//
+	// if the More navigation controller was last selected, you must change the value of the "selectedViewController" property instead.
+	if ([[NSUserDefaults standardUserDefaults] integerForKey:WHICH_TAB_PREF_KEY] == NSNotFound)
+	{
+		self.myTabBarController.selectedViewController = self.myTabBarController.moreNavigationController;
+	}
+	else
+	{
+		self.myTabBarController.selectedIndex = [[NSUserDefaults standardUserDefaults] integerForKey:WHICH_TAB_PREF_KEY];
+	}
+	*/
+    
+	// listen for changes in view controller from the More screen
+	//self.myTabBarController.moreNavigationController.delegate = self;
+    
+    /*
+    // choose to make one of our view controllers ("FeaturedViewController"),
+    // not movable/reorderable in More's edit screen
+    //
+    NSMutableArray *customizeableViewControllers = (NSMutableArray *)self.myTabBarController.viewControllers;
+    for (UIViewController *viewController in customizeableViewControllers)
+    {
+        if ([viewController isKindOfClass:[FeaturedViewController class]])
+        {
+            [customizeableViewControllers removeObject:viewController];
+            break;
+        }
+    }
+    self.myTabBarController.customizableViewControllers = customizeableViewControllers;
+    */
+    
+    self.window.rootViewController = self.myTabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -58,6 +132,7 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self saveTabOrder];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -73,6 +148,55 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self saveTabOrder];
+}
+
+#pragma mark - Multitasking
+
+- (void)saveTabOrder
+{
+	// store the tab-order to preferences
+	//
+	NSMutableArray* classNames = [[NSMutableArray alloc] init];
+	for (UIViewController* controller in self.myTabBarController.viewControllers)
+	{
+		if ([controller isKindOfClass:[UINavigationController class]])
+		{
+			UINavigationController *navController = (UINavigationController *)controller;
+			
+			[classNames addObject:NSStringFromClass([navController.topViewController class])];
+		}
+		else
+		{
+			[classNames addObject:NSStringFromClass([controller class])];
+		}
+	}
+	
+	[[NSUserDefaults standardUserDefaults] setObject:classNames forKey:TAB_BAR_ORDER_PREF_KEY];
+}
+
+#pragma mark -
+#pragma mark UITabBarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+	// store the selected tab for next time:
+	//		normally we can do this at "applicationDidTerminate", but this is a convenient spot
+	// note: if the user has the "More" tab selected, then the value stored is "NSNotFound"
+	//
+	[[NSUserDefaults standardUserDefaults] setInteger:[tabBarController selectedIndex] forKey:WHICH_TAB_PREF_KEY];
+}
+
+
+#pragma mark -
+#pragma mark UINavigationControllerDelegate (More screen)
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+	if (viewController == [self.myTabBarController.moreNavigationController.viewControllers objectAtIndex:0])
+	{
+		// returned to the More page
+	}
 }
 
 @end

@@ -18,17 +18,10 @@
 		5CCF09D7165B044A005035C5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF09D6165B044A005035C5 /* Default-568h@2x.png */; };
 		5CCF09DA165B044A005035C5 /* CocktailBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09D9165B044A005035C5 /* CocktailBookViewController.m */; };
 		5CCF09DD165B044A005035C5 /* CocktailBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF09DB165B044A005035C5 /* CocktailBookViewController.xib */; };
-		5CCF09E5165B0552005035C5 /* CBTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09E4165B0552005035C5 /* CBTabBarViewController.m */; };
-		5CCF09E7165B0750005035C5 /* CBTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF09E6165B0750005035C5 /* CBTabBarView.xib */; };
-		5CCF09EA165B99FC005035C5 /* CBCocktailListNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09E9165B99FC005035C5 /* CBCocktailListNavigationController.m */; };
-		5CCF09EC165B9AC8005035C5 /* CBCocktailListNavContView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF09EB165B9AC8005035C5 /* CBCocktailListNavContView.xib */; };
-		5CCF09FF165B9B72005035C5 /* CBCocktailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09F7165B9B71005035C5 /* CBCocktailListViewController.m */; };
 		5CCF0A00165B9B72005035C5 /* CBCocktailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */; };
 		5CCF0A01165B9B72005035C5 /* CBCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */; };
-		5CCF0A02165B9B72005035C5 /* CocktailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF09FC165B9B72005035C5 /* CocktailView.xib */; };
 		5CCF0A03165B9B72005035C5 /* CBCocktail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09FE165B9B72005035C5 /* CBCocktail.m */; };
-		5CCF0A05165B9EF7005035C5 /* CBCocktailListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF0A04165B9EF7005035C5 /* CBCocktailListView.xib */; };
-		5CCF0A0B165BA067005035C5 /* CBCategoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF0A0A165BA067005035C5 /* CBCategoriesView.xib */; };
+		5CCF0A12165BDE0A005035C5 /* CocktailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF0A11165BDE0A005035C5 /* CocktailListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,23 +41,14 @@
 		5CCF09D8165B044A005035C5 /* CocktailBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocktailBookViewController.h; sourceTree = "<group>"; };
 		5CCF09D9165B044A005035C5 /* CocktailBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocktailBookViewController.m; sourceTree = "<group>"; };
 		5CCF09DC165B044A005035C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CocktailBookViewController.xib; sourceTree = "<group>"; };
-		5CCF09E3165B0552005035C5 /* CBTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTabBarViewController.h; sourceTree = "<group>"; };
-		5CCF09E4165B0552005035C5 /* CBTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBTabBarViewController.m; sourceTree = "<group>"; };
-		5CCF09E6165B0750005035C5 /* CBTabBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBTabBarView.xib; sourceTree = "<group>"; };
-		5CCF09E8165B99FC005035C5 /* CBCocktailListNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailListNavigationController.h; sourceTree = "<group>"; };
-		5CCF09E9165B99FC005035C5 /* CBCocktailListNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailListNavigationController.m; sourceTree = "<group>"; };
-		5CCF09EB165B9AC8005035C5 /* CBCocktailListNavContView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBCocktailListNavContView.xib; sourceTree = "<group>"; };
-		5CCF09F6165B9B71005035C5 /* CBCocktailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailListViewController.h; sourceTree = "<group>"; };
-		5CCF09F7165B9B71005035C5 /* CBCocktailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailListViewController.m; sourceTree = "<group>"; };
 		5CCF09F8165B9B71005035C5 /* CBCocktailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailViewController.h; sourceTree = "<group>"; };
 		5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailViewController.m; sourceTree = "<group>"; };
 		5CCF09FA165B9B71005035C5 /* CBCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCategoriesViewController.h; sourceTree = "<group>"; };
 		5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCategoriesViewController.m; sourceTree = "<group>"; };
-		5CCF09FC165B9B72005035C5 /* CocktailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocktailView.xib; sourceTree = "<group>"; };
 		5CCF09FD165B9B72005035C5 /* CBCocktail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktail.h; sourceTree = "<group>"; };
 		5CCF09FE165B9B72005035C5 /* CBCocktail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktail.m; sourceTree = "<group>"; };
-		5CCF0A04165B9EF7005035C5 /* CBCocktailListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBCocktailListView.xib; sourceTree = "<group>"; };
-		5CCF0A0A165BA067005035C5 /* CBCategoriesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBCategoriesView.xib; sourceTree = "<group>"; };
+		5CCF0A10165BDE0A005035C5 /* CocktailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocktailListViewController.h; sourceTree = "<group>"; };
+		5CCF0A11165BDE0A005035C5 /* CocktailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocktailListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,24 +100,15 @@
 				5CCF09D8165B044A005035C5 /* CocktailBookViewController.h */,
 				5CCF09D9165B044A005035C5 /* CocktailBookViewController.m */,
 				5CCF09DB165B044A005035C5 /* CocktailBookViewController.xib */,
-				5CCF09C7165B044A005035C5 /* Supporting Files */,
-				5CCF09E3165B0552005035C5 /* CBTabBarViewController.h */,
-				5CCF09E4165B0552005035C5 /* CBTabBarViewController.m */,
-				5CCF09E6165B0750005035C5 /* CBTabBarView.xib */,
-				5CCF09E8165B99FC005035C5 /* CBCocktailListNavigationController.h */,
-				5CCF09E9165B99FC005035C5 /* CBCocktailListNavigationController.m */,
-				5CCF09EB165B9AC8005035C5 /* CBCocktailListNavContView.xib */,
-				5CCF09F6165B9B71005035C5 /* CBCocktailListViewController.h */,
-				5CCF09F7165B9B71005035C5 /* CBCocktailListViewController.m */,
-				5CCF0A04165B9EF7005035C5 /* CBCocktailListView.xib */,
+				5CCF0A10165BDE0A005035C5 /* CocktailListViewController.h */,
+				5CCF0A11165BDE0A005035C5 /* CocktailListViewController.m */,
 				5CCF09F8165B9B71005035C5 /* CBCocktailViewController.h */,
 				5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */,
-				5CCF09FC165B9B72005035C5 /* CocktailView.xib */,
-				5CCF09FA165B9B71005035C5 /* CBCategoriesViewController.h */,
-				5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */,
-				5CCF0A0A165BA067005035C5 /* CBCategoriesView.xib */,
 				5CCF09FD165B9B72005035C5 /* CBCocktail.h */,
 				5CCF09FE165B9B72005035C5 /* CBCocktail.m */,
+				5CCF09FA165B9B71005035C5 /* CBCategoriesViewController.h */,
+				5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */,
+				5CCF09C7165B044A005035C5 /* Supporting Files */,
 			);
 			path = "Cocktail Book";
 			sourceTree = "<group>";
@@ -209,11 +184,6 @@
 				5CCF09D5165B044A005035C5 /* Default@2x.png in Resources */,
 				5CCF09D7165B044A005035C5 /* Default-568h@2x.png in Resources */,
 				5CCF09DD165B044A005035C5 /* CocktailBookViewController.xib in Resources */,
-				5CCF09E7165B0750005035C5 /* CBTabBarView.xib in Resources */,
-				5CCF09EC165B9AC8005035C5 /* CBCocktailListNavContView.xib in Resources */,
-				5CCF0A02165B9B72005035C5 /* CocktailView.xib in Resources */,
-				5CCF0A05165B9EF7005035C5 /* CBCocktailListView.xib in Resources */,
-				5CCF0A0B165BA067005035C5 /* CBCategoriesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,12 +197,10 @@
 				5CCF09CD165B044A005035C5 /* main.m in Sources */,
 				5CCF09D1165B044A005035C5 /* CocktailBookAppDelegate.m in Sources */,
 				5CCF09DA165B044A005035C5 /* CocktailBookViewController.m in Sources */,
-				5CCF09E5165B0552005035C5 /* CBTabBarViewController.m in Sources */,
-				5CCF09EA165B99FC005035C5 /* CBCocktailListNavigationController.m in Sources */,
-				5CCF09FF165B9B72005035C5 /* CBCocktailListViewController.m in Sources */,
 				5CCF0A00165B9B72005035C5 /* CBCocktailViewController.m in Sources */,
 				5CCF0A01165B9B72005035C5 /* CBCategoriesViewController.m in Sources */,
 				5CCF0A03165B9B72005035C5 /* CBCocktail.m in Sources */,
+				5CCF0A12165BDE0A005035C5 /* CocktailListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,16 +26,7 @@
     return self;
 }
 */
-
-- (id)init
-{
-    self = [super initWithNibName:@"CocktailView" bundle:nil];
-    if (self) {
-        // Do stuff
-    }
-    return self;
-}
-
+ 
 - (void)viewDidLoad
 {
     [super viewDidLoad];

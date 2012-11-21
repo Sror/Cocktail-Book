@@ -16,7 +16,7 @@
 
 @implementation CBCategoriesViewController
 
-@synthesize categoryList = _categoryList;
+@synthesize categoryList;
 
 - (void)viewDidLoad
 {
@@ -24,6 +24,7 @@
 	// Do any additional setup after loading the view.
     
     [self setupCategories];
+    [self.navigationItem setTitle:@"Categories"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,6 +37,16 @@
 {
     NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:@"Cat 1", @"Cat2", @"Cat3", nil];
     self.categoryList = [cat copy];
+}
+
+#pragma mark - AppDelegate methods
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	// this UIViewController is about to re-appear, make sure we remove the current selection in our table view
+	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
+	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
 }
 
 #pragma mark -
@@ -104,61 +115,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Deselect row
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    return;
-    
-    // Declare the view controller
-    //UIViewController *vc = nil;
-    //CBCocktailViewController *vc = [[CBCocktailViewController alloc] init];
-    
-    // Determine the row/section on the tapped cell
-    /*
-     switch (indexPath.section) {
-     case 0:
-     switch (indexPath.row) {
-     case 0: {
-     // initialize and allocate a specific view controller for section 0 row 0
-     vc = [[UIViewController alloc] init];
-     break;
-     }
-     case 1: {
-     // initialize and allocate a specific view controller for section 0 row 1
-     vc = [[UIViewController alloc] init];
-     break;
-     }
-     }
-     break;
-     case 1: {
-     // initialize and allocate a specific view controller for section 1 ALL rows
-     vc = [[UIViewController alloc] init];
-     break;
-     }
-     }
-     */
-    
-    // Get cell textLabel string to use in new view controller title
-    //NSString *cellTitleText = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
-    
-    // Get object at the tapped cell index from table data source array to display in title
-    //CBCocktail *tappedCocktail = [self.cocktailList objectAtIndex:indexPath.row];
-    //[vc setCocktail:tappedCocktail];
-    
-    // Set title indicating what row/section was tapped
-    //[vc setTitle:cellTitleText];
-    
-    // present it modally (not necessary, but sometimes looks better then pushing it onto the stack - depending on your App)
-    //[vc setModalPresentationStyle:UIModalPresentationFormSheet];
-    
-    // Have the transition do a horizontal flip - my personal fav
-    //[vc setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-    
-    // The method `presentModalViewController:animated:` is depreciated in iOS 6 so use `presentViewController:animated:completion:` instead.
-    //[self.navigationController presentViewController:vc animated:YES completion:NULL];
-    
-    //[[self navigationController] pushViewController:vc animated:YES];
-    
-    // We are done with the view controller.  It is retained by self.navigationController so we can release it (if not using ARC)
-    //[vc release], vc = nil;
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES]; // Do this when we reload view
 }
 
 @end

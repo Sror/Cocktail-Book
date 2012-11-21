@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CBCategoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CBCategoriesViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) NSArray *categoryList;
 

@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CBCocktail.h"
 
-@interface CBCocktailViewController : UIViewController <UINavigationControllerDelegate>
+@interface CBCocktailViewController : UIViewController
 
 @property (nonatomic) CBCocktail *cocktail;
-
-- (id)init;
 
 @end

@@ -12,9 +12,9 @@
 
 @interface CocktailBookAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) IBOutlet UIWindow *window;
+@property (strong, nonatomic) IBOutlet UITabBarController *myTabBarController;
 
-@property (strong, nonatomic) CocktailBookViewController *viewController;
+//@property (strong, nonatomic) CocktailBookViewController *viewController;
 
 @end
