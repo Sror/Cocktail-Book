@@ -30,7 +30,7 @@
 	[super viewDidLoad];
 	
 	//[self populateCocktails];
-    [self.navigationItem setTitle:@"Cocktails"];
+    [self.navigationItem setTitle:@"Cocktails by M&S"];
 }
 
 - (void)viewDidUnload
@@ -52,6 +52,11 @@
 {
     CocktailBookAppDelegate *appDelegate = (CocktailBookAppDelegate *)[[UIApplication sharedApplication] delegate];
     cocktails = appDelegate.cocktails;
+}
+
+- (void)setTheme
+{
+    // Set navigation bar and bar button themes.
 }
 
 #pragma mark - AppDelegate methods

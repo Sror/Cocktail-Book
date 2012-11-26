@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) IBOutlet CBCocktailViewController *cocktailView;
 
+- (void)setTheme;
+
 @end
