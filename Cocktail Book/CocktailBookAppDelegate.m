@@ -8,7 +8,6 @@
 
 #import "CocktailBookAppDelegate.h"
 
-#import "CocktailBookViewController.h"
 #import "CBCocktail.h"
 
 #define kCustomiseTabBar        0   // compile time option to turn a custom tab bar on or off
@@ -68,7 +67,6 @@
     [[UITabBar appearance] setBackgroundImage:tb_bg]; // This is exactly the same as the above.
     //[[UINavigationBar appearance] setTintColor:[UIColor greenColor]];
     [[UINavigationBar appearance] setBackgroundImage:nb_bg forBarMetrics:UIBarMetricsDefault];
-    
     
     /*
     // restore the tab-order from prefs

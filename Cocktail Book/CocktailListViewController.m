@@ -23,6 +23,7 @@
 
 @synthesize cocktails;
 @synthesize cocktailView;
+@synthesize filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
 
 // this is called when its tab is first tapped by the user
 - (void)viewDidLoad
@@ -30,7 +31,22 @@
 	[super viewDidLoad];
 	
 	//[self populateCocktails];
+    //NSString *title = @"Cocktails by M&S";
     [self.navigationItem setTitle:@"Cocktails by M&S"];
+    
+    // create a filtered list that will contain products for the search results table.
+	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.cocktails count]];
+	
+	// restore search settings if they were saved in didReceiveMemoryWarning.
+    if (self.savedSearchTerm)
+	{
+        [self.searchDisplayController setActive:self.searchWasActive];
+        [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
+        [self.searchDisplayController.searchBar setText:savedSearchTerm];
+        
+        self.savedSearchTerm = nil;
+    }
+    
 }
 
 - (void)viewDidUnload
@@ -38,6 +54,14 @@
 	[super viewDidUnload];
     
 	self.cocktails = nil;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    // save the state of the search UI so that it can be restored if the view is re-created
+    self.searchWasActive = [self.searchDisplayController isActive];
+    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
+    self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,9 +98,63 @@
 #pragma mark -
 #pragma mark UITableView Delegates
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    
+    if(searchWasActive)
+        return nil;
+    
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    [tempArray addObject:@"A"];
+    [tempArray addObject:@"B"];
+    [tempArray addObject:@"C"];
+    [tempArray addObject:@"D"];
+    [tempArray addObject:@"E"];
+    [tempArray addObject:@"F"];
+    [tempArray addObject:@"G"];
+    [tempArray addObject:@"H"];
+    [tempArray addObject:@"I"];
+    [tempArray addObject:@"J"];
+    [tempArray addObject:@"K"];
+    [tempArray addObject:@"L"];
+    [tempArray addObject:@"M"];
+    [tempArray addObject:@"N"];
+    [tempArray addObject:@"O"];
+    [tempArray addObject:@"P"];
+    [tempArray addObject:@"Q"];
+    [tempArray addObject:@"R"];
+    [tempArray addObject:@"S"];
+    [tempArray addObject:@"T"];
+    [tempArray addObject:@"U"];
+    [tempArray addObject:@"V"];
+    [tempArray addObject:@"W"];
+    [tempArray addObject:@"X"];
+    [tempArray addObject:@"Y"];
+    [tempArray addObject:@"Z"];
+    
+    return tempArray;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    
+    if(searchWasActive)
+        return -1;
+    
+    return index % 2;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.cocktails count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.filteredListContent count];
+    } else {
+        return [self.cocktails count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,9 +170,16 @@
     // Get the item for the cell and set the cell title to the title for the item.
     // In this case, get the cocktail for this cell and set the title as the cocktail name.
     // Other properties you may set are a description ... image for the cell ... etc. Or make a custom cell.
-    CBCocktail *cocktail = [cocktails objectAtIndex:[indexPath row]];
+    CBCocktail *cocktail;// = [cocktails objectAtIndex:[indexPath row]];
+    
+	if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cocktail = [self.filteredListContent objectAtIndex:indexPath.row];
+    } else {
+        cocktail = [self.cocktails objectAtIndex:indexPath.row];
+    }
+    
     [cell.textLabel setText:cocktail.name];
-    [cell.detailTextLabel setText:cocktail.desciption];
+    //[cell.detailTextLabel setText:cocktail.desciption];
     
     return cell;
 }
@@ -145,13 +230,71 @@
     // Deselect row
     //[tableView deselectRowAtIndexPath:indexPath animated:YES]; // We now do this when the view is loaded
     
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	cocktailView.title = cell.textLabel.text;
+    //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	//cocktailView.title = cell.textLabel.text;
     
-    CBCocktail *tappedCocktail = [cocktails objectAtIndex:indexPath.row];
-    [cocktailView setCocktail:tappedCocktail];
+    //CBCocktail *tappedCocktail = [cocktails objectAtIndex:indexPath.row];
+    CBCocktail *cocktail; // = [cocktails objectAtIndex:[indexPath row]];
+    
+	if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cocktail = [self.filteredListContent objectAtIndex:indexPath.row];
+    } else {
+        cocktail = [self.cocktails objectAtIndex:indexPath.row];
+    }
+    
+    cocktailView.title = cocktail.name;
+    [cocktailView setCocktail:cocktail];
     
 	[self.navigationController pushViewController:cocktailView animated:YES];
+}
+
+#pragma mark - Content Filtering
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+	/*
+	 Update the filtered array based on the search text and scope.
+	 */
+	
+	[self.filteredListContent removeAllObjects]; // First clear the filtered array.
+	
+	/*
+	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
+	 */
+	for (CBCocktail *cocktail in cocktails)
+	{
+        /*
+		if ([scope isEqualToString:@"All"] || [product.type isEqualToString:scope])
+		{
+		}
+         */
+        NSComparisonResult result = [cocktail.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+        if (result == NSOrderedSame)
+        {
+            [self.filteredListContent addObject:cocktail];
+        }
+	}
+}
+
+#pragma mark - UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 
 #pragma mark -

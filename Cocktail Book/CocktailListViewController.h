@@ -10,9 +10,15 @@
 
 @class CBCocktailViewController;
 
-@interface CocktailListViewController : UITableViewController
+@interface CocktailListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet CBCocktailViewController *cocktailView;
+
+@property (nonatomic, strong) NSMutableArray *filteredListContent;
+
+@property (nonatomic, copy) NSString *savedSearchTerm;
+@property (nonatomic) NSInteger savedScopeButtonIndex;
+@property (nonatomic) BOOL searchWasActive;
 
 - (void)setTheme;
 
