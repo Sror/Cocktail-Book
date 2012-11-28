@@ -15,15 +15,16 @@
 
 @interface CocktailListViewController()
 @property (nonatomic, strong) NSArray *cocktails;
+@property (nonatomic, strong) NSArray *cocktailRegions;
 
 - (void)populateCocktails;
 @end
 
 @implementation CocktailListViewController
 
-@synthesize cocktails;
+@synthesize cocktails, cocktailRegions;
 @synthesize cocktailView;
-@synthesize filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
+@synthesize listContent, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
 
 // this is called when its tab is first tapped by the user
 - (void)viewDidLoad
@@ -64,6 +65,16 @@
     self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    // Hide the search bar by scrolling the tableview
+    [UIView beginAnimations:@"hidesearchbar" context:nil];
+    [UIView setAnimationDuration:0.4];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
+    [UIView commitAnimations];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -76,6 +87,38 @@
 {
     CocktailBookAppDelegate *appDelegate = (CocktailBookAppDelegate *)[[UIApplication sharedApplication] delegate];
     cocktails = appDelegate.cocktails;
+    
+    NSSortDescriptor *cocktailSortByName = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]; // sort cocktails by name
+    cocktails = [cocktails sortedArrayUsingDescriptors:[NSArray arrayWithObject:cocktailSortByName]];
+    
+    //cocktailRegions = [NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil];
+    
+    /*
+    // Cocktails are already sorted, just need to add them to listContent
+    NSMutableArray *listTemp = [NSMutableArray array];
+    NSMutableArray *regionTemp = [NSMutableArray array];
+    NSMutableArray *cocktail_temp = [NSMutableArray array];
+    NSString *prevSection = @"A"; // We know we start with A.
+    
+    for (CBCocktail *c in cocktails) {
+        NSString *currSection = [[c.name substringToIndex:1] capitalizedString];
+        if (![currSection isEqualToString:prevSection]) {
+            if (![cocktail_temp count]==0) {
+                [listTemp addObject:[cocktail_temp copy]];
+                [regionTemp addObject:prevSection];
+            }
+            prevSection = currSection;
+            [cocktail_temp removeAllObjects];
+        }
+        
+        [cocktail_temp addObject:c];
+    }
+    
+    cocktailRegions = regionTemp;
+    listContent = listTemp;
+    */
+    
+    //NSLog(@"List length: %i - region length: %i", [listTemp count], [regionTemp count]);
 }
 
 - (void)setTheme
@@ -92,46 +135,24 @@
 	// this UIViewController is about to re-appear, make sure we remove the current selection in our table view
 	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
 	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
+    
     [self populateCocktails];
 }
 
 #pragma mark -
 #pragma mark UITableView Delegates
-
+/*
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     
     if(searchWasActive)
         return nil;
     
-    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-    [tempArray addObject:@"A"];
-    [tempArray addObject:@"B"];
-    [tempArray addObject:@"C"];
-    [tempArray addObject:@"D"];
-    [tempArray addObject:@"E"];
-    [tempArray addObject:@"F"];
-    [tempArray addObject:@"G"];
-    [tempArray addObject:@"H"];
-    [tempArray addObject:@"I"];
-    [tempArray addObject:@"J"];
-    [tempArray addObject:@"K"];
-    [tempArray addObject:@"L"];
-    [tempArray addObject:@"M"];
-    [tempArray addObject:@"N"];
-    [tempArray addObject:@"O"];
-    [tempArray addObject:@"P"];
-    [tempArray addObject:@"Q"];
-    [tempArray addObject:@"R"];
-    [tempArray addObject:@"S"];
-    [tempArray addObject:@"T"];
-    [tempArray addObject:@"U"];
-    [tempArray addObject:@"V"];
-    [tempArray addObject:@"W"];
-    [tempArray addObject:@"X"];
-    [tempArray addObject:@"Y"];
-    [tempArray addObject:@"Z"];
+    return cocktailRegions;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    return tempArray;
+    return [cocktailRegions objectAtIndex:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
@@ -145,11 +166,15 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [cocktailRegions count];
 }
+ 
+ */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    //return [[listContent objectAtIndex:section] count];
+    
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [self.filteredListContent count];
     } else {
@@ -163,7 +188,7 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:COCKTAIL_CELL_ID];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     

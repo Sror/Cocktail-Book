@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) IBOutlet CBCocktailViewController *cocktailView;
 
+@property (nonatomic, strong) NSArray *listContent;
 @property (nonatomic, strong) NSMutableArray *filteredListContent;
 
 @property (nonatomic, copy) NSString *savedSearchTerm;

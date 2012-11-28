@@ -13,4 +13,13 @@
 
 @property (nonatomic) CBCocktail *cocktail;
 
+@property (nonatomic) IBOutlet UIView *contentView;
+@property (nonatomic) IBOutlet UIView *ingredientView;
+@property (nonatomic) IBOutlet UIView *methodView;
+@property (nonatomic) IBOutlet UIView *similarView;
+
+@property (nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
+- (IBAction)segmentedControllerTouch:(id)sender;
+
 @end

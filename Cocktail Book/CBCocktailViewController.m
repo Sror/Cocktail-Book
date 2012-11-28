@@ -15,22 +15,14 @@
 @implementation CBCocktailViewController
 
 @synthesize cocktail = _cocktail;
+@synthesize contentView, ingredientView, methodView, similarView, segmentedControl;
 
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:@"CocktailView" bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
- 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [contentView addSubview:ingredientView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,19 +45,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-- (IBAction)save:(id)sender
+- (IBAction)segmentedControllerTouch:(id)sender
 {
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
+    int index = [segmentedControl selectedSegmentIndex];
+    
+    [self removeSubviews];
+    if (index==0) {
+        [contentView addSubview:ingredientView];
+    } else if (index==1) {
+        [contentView addSubview:methodView];
+    } else if (index==2) {
+        [contentView addSubview:similarView];
+    }
 }
 
-- (IBAction)cancel:(id)sender
+- (void)removeSubviews
 {
-    // If the user cancelled, then remove the BNRItem from the store
-    [[BNRItemStore sharedStore] removeItem:item];
-    
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
+    NSArray *sub = [contentView subviews];
+    for (UIView *v in sub) {
+        [v removeFromSuperview];
+    }
 }
-*/
 
 @end
