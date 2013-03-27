@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C20A3F317030349009FB492 /* CocktailIngredients.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C20A3F217030349009FB492 /* CocktailIngredients.xib */; };
+		5C20A3F51703035A009FB492 /* CocktailMethod.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C20A3F41703035A009FB492 /* CocktailMethod.xib */; };
+		5C20A3F717030361009FB492 /* CocktailSimilar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C20A3F617030361009FB492 /* CocktailSimilar.xib */; };
+		5C20A3FA170303F8009FB492 /* CBCocktailIngredientsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C20A3F9170303F8009FB492 /* CBCocktailIngredientsController.m */; };
+		5C20A400170312A7009FB492 /* CBCocktailMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C20A3FF170312A7009FB492 /* CBCocktailMethodController.m */; };
+		5C20A403170312BA009FB492 /* CBCocktailSimilarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C20A402170312BA009FB492 /* CBCocktailSimilarController.m */; };
 		5C4AF21F16640E4500161290 /* navbar_leather_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AF21D16640E4500161290 /* navbar_leather_full.png */; };
 		5C4AF22016640E4500161290 /* navbar_leather_full@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AF21E16640E4500161290 /* navbar_leather_full@x2.png */; };
 		5C6A61A61661003700A6DCFC /* tabbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */; };
@@ -32,6 +38,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C20A3F217030349009FB492 /* CocktailIngredients.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocktailIngredients.xib; sourceTree = "<group>"; };
+		5C20A3F41703035A009FB492 /* CocktailMethod.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocktailMethod.xib; sourceTree = "<group>"; };
+		5C20A3F617030361009FB492 /* CocktailSimilar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocktailSimilar.xib; sourceTree = "<group>"; };
+		5C20A3F8170303F8009FB492 /* CBCocktailIngredientsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailIngredientsController.h; sourceTree = "<group>"; };
+		5C20A3F9170303F8009FB492 /* CBCocktailIngredientsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailIngredientsController.m; sourceTree = "<group>"; };
+		5C20A3FE170312A7009FB492 /* CBCocktailMethodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailMethodController.h; sourceTree = "<group>"; };
+		5C20A3FF170312A7009FB492 /* CBCocktailMethodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailMethodController.m; sourceTree = "<group>"; };
+		5C20A401170312BA009FB492 /* CBCocktailSimilarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailSimilarController.h; sourceTree = "<group>"; };
+		5C20A402170312BA009FB492 /* CBCocktailSimilarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailSimilarController.m; sourceTree = "<group>"; };
 		5C4AF21D16640E4500161290 /* navbar_leather_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_leather_full.png; sourceTree = "<group>"; };
 		5C4AF21E16640E4500161290 /* navbar_leather_full@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_leather_full@x2.png"; sourceTree = "<group>"; };
 		5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_bg@2x.png"; sourceTree = "<group>"; };
@@ -79,6 +94,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C20A3EA17020500009FB492 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				5CCF09DB165B044A005035C5 /* CocktailBookViewController.xib */,
+				5C20A3F217030349009FB492 /* CocktailIngredients.xib */,
+				5C20A3F41703035A009FB492 /* CocktailMethod.xib */,
+				5C20A3F617030361009FB492 /* CocktailSimilar.xib */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		5C20A3FB1703044F009FB492 /* Cocktail View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5C20A3F8170303F8009FB492 /* CBCocktailIngredientsController.h */,
+				5C20A3F9170303F8009FB492 /* CBCocktailIngredientsController.m */,
+				5C20A3FE170312A7009FB492 /* CBCocktailMethodController.h */,
+				5C20A3FF170312A7009FB492 /* CBCocktailMethodController.m */,
+				5C20A401170312BA009FB492 /* CBCocktailSimilarController.h */,
+				5C20A402170312BA009FB492 /* CBCocktailSimilarController.m */,
+			);
+			name = "Cocktail View Controllers";
+			sourceTree = "<group>";
+		};
 		5C6A61A8166107BC00A6DCFC /* UIImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,13 +161,14 @@
 		5CCF09C6165B044A005035C5 /* Cocktail Book */ = {
 			isa = PBXGroup;
 			children = (
+				5C20A3EA17020500009FB492 /* Interface */,
 				5CCF09CF165B044A005035C5 /* CocktailBookAppDelegate.h */,
 				5CCF09D0165B044A005035C5 /* CocktailBookAppDelegate.m */,
-				5CCF09DB165B044A005035C5 /* CocktailBookViewController.xib */,
 				5CCF0A10165BDE0A005035C5 /* CocktailListViewController.h */,
 				5CCF0A11165BDE0A005035C5 /* CocktailListViewController.m */,
 				5CCF09F8165B9B71005035C5 /* CBCocktailViewController.h */,
 				5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */,
+				5C20A3FB1703044F009FB492 /* Cocktail View Controllers */,
 				5CCF09FD165B9B72005035C5 /* CBCocktail.h */,
 				5CCF09FE165B9B72005035C5 /* CBCocktail.m */,
 				5CCF09FA165B9B71005035C5 /* CBCategoriesViewController.h */,
@@ -220,6 +260,9 @@
 				5C6A61B61663A4E000A6DCFC /* tabbar_leather_full_2@x2.png in Resources */,
 				5C4AF21F16640E4500161290 /* navbar_leather_full.png in Resources */,
 				5C4AF22016640E4500161290 /* navbar_leather_full@x2.png in Resources */,
+				5C20A3F317030349009FB492 /* CocktailIngredients.xib in Resources */,
+				5C20A3F51703035A009FB492 /* CocktailMethod.xib in Resources */,
+				5C20A3F717030361009FB492 /* CocktailSimilar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +280,9 @@
 				5CCF0A03165B9B72005035C5 /* CBCocktail.m in Sources */,
 				5CCF0A12165BDE0A005035C5 /* CocktailListViewController.m in Sources */,
 				5C7C4660165D01B70018FFEE /* FavouritesViewController.m in Sources */,
+				5C20A3FA170303F8009FB492 /* CBCocktailIngredientsController.m in Sources */,
+				5C20A400170312A7009FB492 /* CBCocktailMethodController.m in Sources */,
+				5C20A403170312BA009FB492 /* CBCocktailSimilarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

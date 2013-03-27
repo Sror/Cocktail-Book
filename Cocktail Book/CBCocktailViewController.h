@@ -9,17 +9,24 @@
 #import <UIKit/UIKit.h>
 #import "CBCocktail.h"
 
-@interface CBCocktailViewController : UIViewController
+@interface CBCocktailViewController : UIViewController <UIScrollViewDelegate> {
+    IBOutlet UIScrollView *scrollView;
+    IBOutlet UIPageControl *pageControl;
+    NSMutableArray *viewControllers;
+    BOOL pageControlUsed;
+}
 
 @property (nonatomic) CBCocktail *cocktail;
 
-@property (nonatomic) IBOutlet UIView *contentView;
-@property (nonatomic) IBOutlet UIView *ingredientView;
-@property (nonatomic) IBOutlet UIView *methodView;
-@property (nonatomic) IBOutlet UIView *similarView;
+@property (nonatomic) IBOutlet UIWindow *window;
+@property (nonatomic) UIScrollView *scrollView;
+@property (nonatomic) UIPageControl *pageControl;
+@property (nonatomic) NSMutableArray *viewControllers;
 
-@property (nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (nonatomic) IBOutlet UIViewController *ingredientsController;
+@property (nonatomic) IBOutlet UIViewController *methodController;
+@property (nonatomic) IBOutlet UIViewController *similarController;
 
-- (IBAction)segmentedControllerTouch:(id)sender;
+- (IBAction)changePage:(id)sender;
 
 @end
