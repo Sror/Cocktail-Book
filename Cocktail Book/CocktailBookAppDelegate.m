@@ -60,12 +60,13 @@
 #endif
     //UIImage *tb_bg = [UIImage imageNamed:@"tabbar_leather_full_2.png"];
     //UIImage *nb_bg = [UIImage imageNamed:@"navbar_leather_full.png"];
+    UIImage *tb_bg = [UIImage imageNamed:@"tabbar_bg.png"];
     
     //self.myTabBarController.tabBar.backgroundImage = tb_bg;
     // Here we are using the iOS6 Appearance protocol to cover the universal appearance of the app.
     // We can handle specific appearances by specifying the class (viewController) name, as long as
     // that class supports the UIAppearance protocol.
-    //[[UITabBar appearance] setBackgroundImage:tb_bg]; // This is exactly the same as the above.
+    [[UITabBar appearance] setBackgroundImage:tb_bg]; // This is exactly the same as the above.
     //[[UINavigationBar appearance] setTintColor:[UIColor greenColor]];
     //[[UINavigationBar appearance] setBackgroundImage:nb_bg forBarMetrics:UIBarMetricsDefault];
     
@@ -138,7 +139,7 @@
     self.myTabBarController.customizableViewControllers = customizeableViewControllers;
     */
     
-    [myTabBarController setSelectedIndex:2]; // Start on the cocktails view
+    [myTabBarController setSelectedIndex:1]; // Start on the cocktails view
     self.window.rootViewController = self.myTabBarController;
     [self.window makeKeyAndVisible];
     return YES;

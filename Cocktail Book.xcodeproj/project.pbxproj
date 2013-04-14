@@ -14,12 +14,13 @@
 		5C20A3FA170303F8009FB492 /* CBCocktailIngredientsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C20A3F9170303F8009FB492 /* CBCocktailIngredientsController.m */; };
 		5C20A400170312A7009FB492 /* CBCocktailMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C20A3FF170312A7009FB492 /* CBCocktailMethodController.m */; };
 		5C20A403170312BA009FB492 /* CBCocktailSimilarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C20A402170312BA009FB492 /* CBCocktailSimilarController.m */; };
-		5C4AF21F16640E4500161290 /* navbar_leather_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AF21D16640E4500161290 /* navbar_leather_full.png */; };
-		5C4AF22016640E4500161290 /* navbar_leather_full@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AF21E16640E4500161290 /* navbar_leather_full@x2.png */; };
+		5C253D4C171B46EE00C0CE7A /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C253D4A171B46EE00C0CE7A /* heart.png */; };
+		5C253D4D171B46EE00C0CE7A /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C253D4B171B46EE00C0CE7A /* heart@2x.png */; };
+		5C253D50171B4A2400C0CE7A /* heart-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C253D4E171B4A2400C0CE7A /* heart-red.png */; };
+		5C253D51171B4A2400C0CE7A /* heart-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C253D4F171B4A2400C0CE7A /* heart-red@2x.png */; };
+		5C253D53171B57ED00C0CE7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C253D52171B57ED00C0CE7A /* QuartzCore.framework */; };
 		5C6A61A61661003700A6DCFC /* tabbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */; };
 		5C6A61AA16627F1000A6DCFC /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61A916627F1000A6DCFC /* tabbar_bg.png */; };
-		5C6A61B51663A4E000A6DCFC /* tabbar_leather_full_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61B31663A4E000A6DCFC /* tabbar_leather_full_2.png */; };
-		5C6A61B61663A4E000A6DCFC /* tabbar_leather_full_2@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61B41663A4E000A6DCFC /* tabbar_leather_full_2@x2.png */; };
 		5C7C4660165D01B70018FFEE /* FavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C465F165D01B70018FFEE /* FavouritesViewController.m */; };
 		5C7C4664165D36600018FFEE /* cocktails.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5C7C4663165D36600018FFEE /* cocktails.xml */; };
 		5CCF09C1165B044A005035C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C0165B044A005035C5 /* UIKit.framework */; };
@@ -50,12 +51,13 @@
 		5C20A3FF170312A7009FB492 /* CBCocktailMethodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailMethodController.m; sourceTree = "<group>"; };
 		5C20A401170312BA009FB492 /* CBCocktailSimilarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailSimilarController.h; sourceTree = "<group>"; };
 		5C20A402170312BA009FB492 /* CBCocktailSimilarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailSimilarController.m; sourceTree = "<group>"; };
-		5C4AF21D16640E4500161290 /* navbar_leather_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_leather_full.png; sourceTree = "<group>"; };
-		5C4AF21E16640E4500161290 /* navbar_leather_full@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_leather_full@x2.png"; sourceTree = "<group>"; };
+		5C253D4A171B46EE00C0CE7A /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		5C253D4B171B46EE00C0CE7A /* heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart@2x.png"; sourceTree = "<group>"; };
+		5C253D4E171B4A2400C0CE7A /* heart-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-red.png"; sourceTree = "<group>"; };
+		5C253D4F171B4A2400C0CE7A /* heart-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-red@2x.png"; sourceTree = "<group>"; };
+		5C253D52171B57ED00C0CE7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_bg@2x.png"; sourceTree = "<group>"; };
 		5C6A61A916627F1000A6DCFC /* tabbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_bg.png; sourceTree = "<group>"; };
-		5C6A61B31663A4E000A6DCFC /* tabbar_leather_full_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_leather_full_2.png; sourceTree = "<group>"; };
-		5C6A61B41663A4E000A6DCFC /* tabbar_leather_full_2@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_leather_full_2@x2.png"; sourceTree = "<group>"; };
 		5C7C465E165D01B70018FFEE /* FavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesViewController.h; sourceTree = "<group>"; };
 		5C7C465F165D01B70018FFEE /* FavouritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesViewController.m; sourceTree = "<group>"; };
 		5C7C4663165D36600018FFEE /* cocktails.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cocktails.xml; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C253D53171B57ED00C0CE7A /* QuartzCore.framework in Frameworks */,
 				5CCF09C1165B044A005035C5 /* UIKit.framework in Frameworks */,
 				5CCF09C3165B044A005035C5 /* Foundation.framework in Frameworks */,
 				5CCF09C5165B044A005035C5 /* CoreGraphics.framework in Frameworks */,
@@ -127,10 +130,10 @@
 			children = (
 				5C6A61A916627F1000A6DCFC /* tabbar_bg.png */,
 				5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */,
-				5C6A61B31663A4E000A6DCFC /* tabbar_leather_full_2.png */,
-				5C6A61B41663A4E000A6DCFC /* tabbar_leather_full_2@x2.png */,
-				5C4AF21D16640E4500161290 /* navbar_leather_full.png */,
-				5C4AF21E16640E4500161290 /* navbar_leather_full@x2.png */,
+				5C253D4E171B4A2400C0CE7A /* heart-red.png */,
+				5C253D4F171B4A2400C0CE7A /* heart-red@2x.png */,
+				5C253D4A171B46EE00C0CE7A /* heart.png */,
+				5C253D4B171B46EE00C0CE7A /* heart@2x.png */,
 			);
 			name = UIImages;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 		5CCF09B1165B044A005035C5 = {
 			isa = PBXGroup;
 			children = (
+				5C253D52171B57ED00C0CE7A /* QuartzCore.framework */,
 				5CCF09C6165B044A005035C5 /* Cocktail Book */,
 				5CCF09BF165B044A005035C5 /* Frameworks */,
 				5CCF09BD165B044A005035C5 /* Products */,
@@ -264,13 +268,13 @@
 				5C7C4664165D36600018FFEE /* cocktails.xml in Resources */,
 				5C6A61A61661003700A6DCFC /* tabbar_bg@2x.png in Resources */,
 				5C6A61AA16627F1000A6DCFC /* tabbar_bg.png in Resources */,
-				5C6A61B51663A4E000A6DCFC /* tabbar_leather_full_2.png in Resources */,
-				5C6A61B61663A4E000A6DCFC /* tabbar_leather_full_2@x2.png in Resources */,
-				5C4AF21F16640E4500161290 /* navbar_leather_full.png in Resources */,
-				5C4AF22016640E4500161290 /* navbar_leather_full@x2.png in Resources */,
 				5C20A3F317030349009FB492 /* CocktailIngredients.xib in Resources */,
 				5C20A3F51703035A009FB492 /* CocktailMethod.xib in Resources */,
 				5C20A3F717030361009FB492 /* CocktailSimilar.xib in Resources */,
+				5C253D4C171B46EE00C0CE7A /* heart.png in Resources */,
+				5C253D4D171B46EE00C0CE7A /* heart@2x.png in Resources */,
+				5C253D50171B4A2400C0CE7A /* heart-red.png in Resources */,
+				5C253D51171B4A2400C0CE7A /* heart-red@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

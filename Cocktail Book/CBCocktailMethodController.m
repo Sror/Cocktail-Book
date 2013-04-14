@@ -11,26 +11,58 @@
 
 @implementation CBCocktailMethodController : UIViewController
 
-@synthesize pageNumberLabel, methodTextView;
+@synthesize methodTextView, barTipTextView;
 
-- (id)initWithCocktail:(CBCocktail *)cktl {
-    if (self = [super initWithNibName:@"CocktailMethod" bundle:nil])    {
-        pageNumber = 1;
+- (id)initWithCocktail:(CBCocktail *)cktl
+{
+    if (self = [super initWithNibName:@"CocktailMethod" bundle:nil]) {
         cocktail = cktl;
     }
     return self;
 }
 
-- (void)viewDidLoad {
-    pageNumberLabel.text = @"Method";
-    
+- (void)viewDidLoad
+{
     [self setupMethod];
+    [self setupBartendersTip];
 }
 
 - (void)setupMethod
 {
     methodTextView.text = cocktail.method;
-    NSLog(@"%@", cocktail.method);
+    
+    [self resizeView:methodTextView];
+}
+
+- (void)setupBartendersTip
+{
+    if (![cocktail.bartendersTip isEqualToString:@"nil"])
+        barTipTextView.text = [NSString stringWithFormat:@"BARTENDER'S TIP: %@", cocktail.bartendersTip];
+    else
+        barTipTextView.text = @"";
+    
+    [self alignView:barTipTextView belowView:methodTextView withAnimationTime:0.5 andOffset:10];
+}
+
+#pragma mark - UITextView Manipulation
+
+- (void)resizeView:(UITextView *)view
+{
+    CGRect frame = view.frame;
+    UIEdgeInsets inset = view.contentInset;
+    frame.size.height = view.contentSize.height + inset.top + inset.bottom;
+    view.frame = frame;
+    [view sizeToFit];
+}
+
+- (void)alignView:(UITextView *)lowerView belowView:(UITextView *)upperView withAnimationTime:(float)time andOffset:(int)offset
+{
+    [UIView animateWithDuration:time animations:^{
+        CGRect frame = lowerView.frame;
+        CGRect dframe = upperView.frame;
+        frame.origin.y = dframe.origin.y + dframe.size.height + offset;
+        lowerView.frame = frame;
+    }];
 }
 
 @end

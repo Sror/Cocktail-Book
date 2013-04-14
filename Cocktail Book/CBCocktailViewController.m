@@ -37,6 +37,8 @@ static NSUInteger kNumberOfPages = 2;
     [self.navigationItem setTitle:self.cocktail.name];
     
     [self preparePageControl];
+    
+    [self setFavouriteButton];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -50,6 +52,29 @@ static NSUInteger kNumberOfPages = 2;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setFavouriteButton
+{
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"heart.png"]
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(changeFavouriteState)];
+    if (cocktail.isFavourite)
+        [rightButton setImage:[UIImage imageNamed:@"heart-red.png"]];
+    
+    [self.navigationItem setRightBarButtonItem:rightButton];
+}
+
+- (void)changeFavouriteState
+{
+    if (cocktail.isFavourite) {
+        cocktail.isFavourite = NO;
+    } else {
+        cocktail.isFavourite = YES;
+    }
+    
+    [self setFavouriteButton];
 }
 
 #pragma mark - PageControl shiznit
@@ -134,6 +159,15 @@ static NSUInteger kNumberOfPages = 2;
     [self loadScrollViewWithPage:page + 1];
     
     // A possible optimization would be to unload the views+controllers which are no longer visible
+    
+    /*
+    // change the title
+    if (page==0) {
+        [self.navigationItem setTitle:@"Ingredients"];
+    } else if (page==1) {
+        [self.navigationItem setTitle:@"Method"];
+    }
+     */
 }
 
 // At the begin of scroll dragging, reset the boolean used when scrolls originate from the UIPageControl

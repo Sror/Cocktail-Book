@@ -11,17 +11,18 @@
 #import "CBCocktail.h"
 
 @interface CBCocktailIngredientsController : UIViewController {
-    IBOutlet UILabel *pageNumberLabel;
+    IBOutlet UITextView *descriptionField;
     IBOutlet UITextView *ingredientsListField;
-    int pageNumber;
+    IBOutlet UITextView *servesTextView;
+    IBOutlet UITextView *pageTextView;
     
     CBCocktail *cocktail;
-    
-    NSString *cocktailName;
 }
 
-@property (nonatomic, retain) UILabel *pageNumberLabel;
+@property (nonatomic) UITextView *descriptionField;
 @property (nonatomic) UITextView *ingredientsListField;
+@property (nonatomic) UITextView *servesTextView;
+@property (nonatomic) UITextView *pageTextView;
 
 - (id)initWithCocktail:(CBCocktail *)cktl;
 

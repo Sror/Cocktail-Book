@@ -6,10 +6,14 @@
 //  Copyright (c) 2012 Ruaridh Sinclair Thomson. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "CocktailBookAppDelegate.h"
 #import "CocktailListViewController.h"
 #import "CBCocktailViewController.h"
 #import "CBCocktail.h"
+
+#import "PopoverView.h"
 
 #define COCKTAIL_CELL_ID @"Cocktail_Cell"
 
@@ -38,6 +42,9 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
     [self.navigationItem setBackBarButtonItem: backButton];
     
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(displayCategoryFilter)];
+    [self.navigationItem setRightBarButtonItem:rightButton];
+    
     // create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.cocktails count]];
 	
@@ -50,7 +57,6 @@
         
         self.savedSearchTerm = nil;
     }
-    
 }
 
 - (void)viewDidUnload
@@ -132,6 +138,15 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
     self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
     [UIView commitAnimations];
+}
+
+- (void)displayCategoryFilter
+{
+    CGPoint anchor = CGPointMake(self.view.frame.size.width - 10, 20);
+    
+    UITableView *categoryList = [[UITableView alloc] init];
+    
+    [PopoverView showPopoverAtPoint:anchor inView:self.view withContentView:categoryList delegate:nil];
 }
 
 #pragma mark - AppDelegate methods

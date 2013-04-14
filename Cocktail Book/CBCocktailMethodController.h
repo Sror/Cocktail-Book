@@ -11,15 +11,14 @@
 #import "CBCocktail.h"
 
 @interface CBCocktailMethodController : UIViewController {
-    IBOutlet UILabel *pageNumberLabel;
     IBOutlet UITextView *methodTextView;
+    IBOutlet UITextView *barTipTextView;
     
-    int pageNumber;
     CBCocktail *cocktail;
 }
 
-@property (nonatomic, retain) UILabel *pageNumberLabel;
 @property (nonatomic) UITextView *methodTextView;
+@property (nonatomic) UITextView *barTipTextView;
 
 - (id)initWithCocktail:(CBCocktail *)cktl;
 
