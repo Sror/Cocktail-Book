@@ -35,6 +35,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+// We know what categories we have. A more robust implementation would be to iterate through
+// cocktails to get a set of categories.
 - (void)setupCategories
 {
     NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:@"Bubbles", @"Chic", @"Jungle Juice", @"Frou Frou",

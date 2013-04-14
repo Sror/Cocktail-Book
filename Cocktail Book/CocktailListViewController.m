@@ -70,12 +70,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    // Hide the search bar by scrolling the tableview
-    [UIView beginAnimations:@"hidesearchbar" context:nil];
-    [UIView setAnimationDuration:0.4];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
-    [UIView commitAnimations];
+    [self hideSearchBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,6 +122,16 @@
 - (void)setTheme
 {
     // Set navigation bar and bar button themes.
+}
+
+- (void)hideSearchBar
+{
+    // Hide the search bar by scrolling the tableview
+    [UIView beginAnimations:@"hidesearchbar" context:nil];
+    [UIView setAnimationDuration:0.4];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
+    [UIView commitAnimations];
 }
 
 #pragma mark - AppDelegate methods
