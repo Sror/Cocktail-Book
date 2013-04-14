@@ -29,4 +29,6 @@
 
 - (IBAction)changePage:(id)sender;
 
+- (void)preparePageControl;
+
 @end

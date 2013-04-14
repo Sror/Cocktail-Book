@@ -1,0 +1,16 @@
+PODS:
+  - AKTabBarController (1.0.1)
+  - MBProgressHUD (0.6)
+  - SMPageControl (1.0)
+
+DEPENDENCIES:
+  - AKTabBarController
+  - MBProgressHUD
+  - SMPageControl
+
+SPEC CHECKSUMS:
+  AKTabBarController: d3876684504512be83b90b5eabefce3853af043f
+  MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
+  SMPageControl: 9d100f9aa8ca0cf10222666ff31d4d1cbfdac674
+
+COCOAPODS: 0.18.1

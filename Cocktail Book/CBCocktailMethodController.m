@@ -7,20 +7,30 @@
 //
 
 #import "CBCocktailMethodController.h"
+#import "CBCocktail.h"
 
 @implementation CBCocktailMethodController : UIViewController
 
-@synthesize pageNumberLabel;
+@synthesize pageNumberLabel, methodTextView;
 
-- (id)initWithPageNumber:(int)page {
+- (id)initWithCocktail:(CBCocktail *)cktl {
     if (self = [super initWithNibName:@"CocktailMethod" bundle:nil])    {
-        pageNumber = page;
+        pageNumber = 1;
+        cocktail = cktl;
     }
     return self;
 }
 
 - (void)viewDidLoad {
-    pageNumberLabel.text = [NSString stringWithFormat:@"Page %d", pageNumber + 1];
+    pageNumberLabel.text = @"Method";
+    
+    [self setupMethod];
+}
+
+- (void)setupMethod
+{
+    methodTextView.text = cocktail.method;
+    NSLog(@"%@", cocktail.method);
 }
 
 @end

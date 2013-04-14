@@ -8,12 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CBCocktail.h"
+
 @interface CBCocktailIngredientsController : UIViewController {
     IBOutlet UILabel *pageNumberLabel;
+    IBOutlet UITextView *ingredientsListField;
     int pageNumber;
+    
+    CBCocktail *cocktail;
+    
+    NSString *cocktailName;
 }
 
 @property (nonatomic, retain) UILabel *pageNumberLabel;
-- (id)initWithPageNumber:(int)page;
+@property (nonatomic) UITextView *ingredientsListField;
+
+- (id)initWithCocktail:(CBCocktail *)cktl;
 
 @end

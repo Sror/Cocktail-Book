@@ -8,13 +8,15 @@
 
 #import "CBCocktailSimilarController.h"
 
+#import "CBCocktail.h"
+
 @implementation CBCocktailSimilarController : UIViewController
 
 @synthesize pageNumberLabel;
 
-- (id)initWithPageNumber:(int)page {
+- (id)initWithCocktail:(CBCocktail *)cocktail {
     if (self = [super initWithNibName:@"CocktailSimilar" bundle:nil])    {
-        pageNumber = page;
+        pageNumber = 2;
     }
     return self;
 }

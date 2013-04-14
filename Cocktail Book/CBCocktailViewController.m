@@ -11,7 +11,7 @@
 #import "CBCocktailMethodController.h"
 #import "CBCocktailSimilarController.h"
 
-static NSUInteger kNumberOfPages = 3;
+static NSUInteger kNumberOfPages = 2;
 
 @interface CBCocktailViewController ()
 
@@ -34,11 +34,9 @@ static NSUInteger kNumberOfPages = 3;
 {
     [super viewWillAppear:animated];
     
-    [[self navigationItem] setTitle:self.cocktail.name];
+    [self.navigationItem setTitle:self.cocktail.name];
     
-    //viewControllers = [NSArray arrayWithObjects:ingredientsController, methodController, similarController, nil];
-    
-    [self appLaunchFake];
+    [self preparePageControl];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -54,18 +52,13 @@ static NSUInteger kNumberOfPages = 3;
     // Dispose of any resources that can be recreated.
 }
 
-/*
-- (UIView *)view
-{
-    return self.scrollView;
-}
-*/
 #pragma mark - PageControl shiznit
-- (void)appLaunchFake
+- (void)preparePageControl
 {    
     // view controllers are created lazily
     // in the meantime, load the array with placeholders which will be replaced on demand
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
+   
     for (unsigned i = 0; i < kNumberOfPages; i++) {
 		[controllers addObject:[NSNull null]];
     }
@@ -98,12 +91,14 @@ static NSUInteger kNumberOfPages = 3;
         return;
     
     // replace the placeholder if necessary
-    CBCocktailIngredientsController *controller = [viewControllers objectAtIndex:page];
+    UIViewController *controller = [viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null]) {
         if (page==0) {
-            controller = [[CBCocktailIngredientsController alloc] initWithPageNumber:page];
+            controller = [[CBCocktailIngredientsController alloc] initWithCocktail:cocktail];
         } else if (page==1) {
-            controller = [[CBCocktailIngredientsController alloc] initWithPageNumber:page];
+            controller = [[CBCocktailMethodController alloc] initWithCocktail:cocktail];
+        } else if (page==2) {
+            controller = [[CBCocktailSimilarController alloc] initWithCocktail:cocktail];
         }
         [viewControllers replaceObjectAtIndex:page withObject:controller];
     }

@@ -8,19 +8,50 @@
 
 #import "CBCocktailIngredientsController.h"
 
+#import "CBCocktail.h"
+
 @implementation CBCocktailIngredientsController : UIViewController
 
-@synthesize pageNumberLabel;
+@synthesize pageNumberLabel, ingredientsListField;
 
-- (id)initWithPageNumber:(int)page {
+- (id)initWithCocktail:(CBCocktail *)cktl {
     if (self = [super initWithNibName:@"CocktailIngredients" bundle:nil])    {
-        pageNumber = page;
+        pageNumber = 0;
+        cocktail = cktl;
     }
     return self;
 }
 
 - (void)viewDidLoad {
-    pageNumberLabel.text = [NSString stringWithFormat:@"Page %d", pageNumber + 1];
+    pageNumberLabel.text = cocktail.name;
+    
+    [self setupIngredientsList];
+}
+
+- (void)setupIngredientsList
+{
+    NSString *ingredientList = @"";
+    
+    for (NSDictionary *ingredientDict in cocktail.ingredients) {
+        NSString *ingredientName = [ingredientDict objectForKey:@"name"];
+        NSString *ingredientNote = [ingredientDict objectForKey:@"note"];
+        NSString *ingredientQuantity = [ingredientDict objectForKey:@"quantity"];
+        NSString *ingredientString = @"\u2022 ";
+        
+        if (![ingredientQuantity isEqualToString:@"nil"]) {
+            ingredientString = [ingredientString stringByAppendingString:[NSString stringWithFormat:@"%@ ",ingredientQuantity]];
+        }
+        if (![ingredientName isEqualToString:@"nil"]) {
+            ingredientString = [ingredientString stringByAppendingString:[NSString stringWithFormat:@"%@ ",ingredientName]];
+        }
+        if (![ingredientNote isEqualToString:@"nil"]) {
+            ingredientString = [ingredientString stringByAppendingString:[NSString stringWithFormat:@"\n \t %@", ingredientNote]];
+        }
+        ingredientString = [ingredientString stringByAppendingString:@" \n"];
+        ingredientList = [ingredientList stringByAppendingString:ingredientString];
+    }
+    
+    ingredientsListField.text = ingredientList;
 }
 
 @end

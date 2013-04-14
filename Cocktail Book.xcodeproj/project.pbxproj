@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3737760FCA784A178B59C651 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3FE34704F346F08644090F /* libPods.a */; };
 		5C20A3F317030349009FB492 /* CocktailIngredients.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C20A3F217030349009FB492 /* CocktailIngredients.xib */; };
 		5C20A3F51703035A009FB492 /* CocktailMethod.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C20A3F41703035A009FB492 /* CocktailMethod.xib */; };
 		5C20A3F717030361009FB492 /* CocktailSimilar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C20A3F617030361009FB492 /* CocktailSimilar.xib */; };
@@ -38,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D149F19CEA840E9BFDAD4C6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		1F3FE34704F346F08644090F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C20A3F217030349009FB492 /* CocktailIngredients.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocktailIngredients.xib; sourceTree = "<group>"; };
 		5C20A3F41703035A009FB492 /* CocktailMethod.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocktailMethod.xib; sourceTree = "<group>"; };
 		5C20A3F617030361009FB492 /* CocktailSimilar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocktailSimilar.xib; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 				5CCF09C1165B044A005035C5 /* UIKit.framework in Frameworks */,
 				5CCF09C3165B044A005035C5 /* Foundation.framework in Frameworks */,
 				5CCF09C5165B044A005035C5 /* CoreGraphics.framework in Frameworks */,
+				3737760FCA784A178B59C651 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +141,7 @@
 				5CCF09C6165B044A005035C5 /* Cocktail Book */,
 				5CCF09BF165B044A005035C5 /* Frameworks */,
 				5CCF09BD165B044A005035C5 /* Products */,
+				1D149F19CEA840E9BFDAD4C6 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +159,7 @@
 				5CCF09C0165B044A005035C5 /* UIKit.framework */,
 				5CCF09C2165B044A005035C5 /* Foundation.framework */,
 				5CCF09C4165B044A005035C5 /* CoreGraphics.framework */,
+				1F3FE34704F346F08644090F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,13 +170,13 @@
 				5C20A3EA17020500009FB492 /* Interface */,
 				5CCF09CF165B044A005035C5 /* CocktailBookAppDelegate.h */,
 				5CCF09D0165B044A005035C5 /* CocktailBookAppDelegate.m */,
+				5CCF09FD165B9B72005035C5 /* CBCocktail.h */,
+				5CCF09FE165B9B72005035C5 /* CBCocktail.m */,
 				5CCF0A10165BDE0A005035C5 /* CocktailListViewController.h */,
 				5CCF0A11165BDE0A005035C5 /* CocktailListViewController.m */,
 				5CCF09F8165B9B71005035C5 /* CBCocktailViewController.h */,
 				5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */,
 				5C20A3FB1703044F009FB492 /* Cocktail View Controllers */,
-				5CCF09FD165B9B72005035C5 /* CBCocktail.h */,
-				5CCF09FE165B9B72005035C5 /* CBCocktail.m */,
 				5CCF09FA165B9B71005035C5 /* CBCategoriesViewController.h */,
 				5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */,
 				5C7C465E165D01B70018FFEE /* FavouritesViewController.h */,
@@ -203,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CCF09E0165B044A005035C5 /* Build configuration list for PBXNativeTarget "Cocktail Book" */;
 			buildPhases = (
+				C9287D544AF5457FB0809E49 /* Check Pods Manifest.lock */,
 				5CCF09B8165B044A005035C5 /* Sources */,
 				5CCF09B9165B044A005035C5 /* Frameworks */,
 				5CCF09BA165B044A005035C5 /* Resources */,
+				2F8043808039415BAFD272F7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +275,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F8043808039415BAFD272F7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		C9287D544AF5457FB0809E49 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5CCF09B8165B044A005035C5 /* Sources */ = {
@@ -360,10 +399,12 @@
 		};
 		5CCF09E1165B044A005035C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D149F19CEA840E9BFDAD4C6 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cocktail Book/Cocktail Book-Prefix.pch";
 				INFOPLIST_FILE = "Cocktail Book/Cocktail Book-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -371,10 +412,12 @@
 		};
 		5CCF09E2165B044A005035C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D149F19CEA840E9BFDAD4C6 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cocktail Book/Cocktail Book-Prefix.pch";
 				INFOPLIST_FILE = "Cocktail Book/Cocktail Book-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

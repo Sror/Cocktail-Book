@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CBCocktail.h"
+
 @interface CBCocktailSimilarController : UIViewController {
     IBOutlet UILabel *pageNumberLabel;
     int pageNumber;
 }
 
 @property (nonatomic, retain) UILabel *pageNumberLabel;
-- (id)initWithPageNumber:(int)page;
+- (id)initWithCocktail:(CBCocktail *)cocktail;
 
 @end

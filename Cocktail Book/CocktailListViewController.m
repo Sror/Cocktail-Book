@@ -35,6 +35,9 @@
     //NSString *title = @"Cocktails by M&S";
     [self.navigationItem setTitle:@"Cocktails by M&S"];
     
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
+    [self.navigationItem setBackBarButtonItem: backButton];
+    
     // create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.cocktails count]];
 	
