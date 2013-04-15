@@ -36,8 +36,7 @@
 	[super viewDidLoad];
 	
 	//[self populateCocktails];
-    //NSString *title = @"Cocktails by M&S";
-    [self.navigationItem setTitle:@"Cocktails by M&S"];
+    [self.navigationItem setTitle:@"Cocktails"];
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
     [self.navigationItem setBackBarButtonItem: backButton];
@@ -47,6 +46,7 @@
     
     // create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.cocktails count]];
+    categoryListContent = [NSMutableArray arrayWithCapacity:[self.cocktails count]];
 	
 	// restore search settings if they were saved in didReceiveMemoryWarning.
     if (self.savedSearchTerm)
@@ -57,6 +57,21 @@
         
         self.savedSearchTerm = nil;
     }
+    
+    [self setupCategories];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(categoryFilterChanged) name:@"CBCategoryFilterSelected" object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	// this UIViewController is about to re-appear, make sure we remove the current selection in our table view
+	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
+	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
+    
+    [self populateCocktails];
 }
 
 - (void)viewDidUnload
@@ -125,11 +140,6 @@
     //NSLog(@"List length: %i - region length: %i", [listTemp count], [regionTemp count]);
 }
 
-- (void)setTheme
-{
-    // Set navigation bar and bar button themes.
-}
-
 - (void)hideSearchBar
 {
     // Hide the search bar by scrolling the tableview
@@ -142,24 +152,50 @@
 
 - (void)displayCategoryFilter
 {
-    CGPoint anchor = CGPointMake(self.view.frame.size.width - 10, 20);
+    CGPoint anchor = CGPointMake(self.view.frame.size.width - 10, 35);
     
-    UITableView *categoryList = [[UITableView alloc] init];
+    CGRect frame = CGRectMake(anchor.x, anchor.y, 175, 200);
+    UITableView *categoryList = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
+    categoryList.backgroundColor = [UIColor clearColor];
+    categoryList.dataSource = categoriesDataSource;
+    categoryList.delegate = categoriesDataSource;
     
     [PopoverView showPopoverAtPoint:anchor inView:self.view withContentView:categoryList delegate:nil];
 }
 
-#pragma mark - AppDelegate methods
-
-- (void)viewWillAppear:(BOOL)animated
+- (void)setupCategories
 {
-	[super viewWillAppear:animated];
-	
-	// this UIViewController is about to re-appear, make sure we remove the current selection in our table view
-	NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
-	[self.tableView deselectRowAtIndexPath:tableSelection animated:NO];
+    NSArray *cats = [[NSArray alloc] initWithObjects:@"Bubbles", @"Chic", @"Jungle Juice", @"Frou Frou",
+                     @"Tropicana", @"Muddled", @"Club Lounge", @"Mellow",
+                     @"Virginal", nil];
+    categoriesDataSource = [[CBCategoryTableViewDataSource alloc] initWithCategories:cats];
+    filterByCategories = NO;
+}
+
+- (void)categoryFilterChanged
+{
+    NSArray *cats = categoriesDataSource.selectedCategories;
+    if ([cats count] > 0) {
+        filterByCategories = YES;
+    } else {
+        filterByCategories = NO;
+    }
     
-    [self populateCocktails];
+    [categoryListContent removeAllObjects];
+    for (CBCocktail *c in self.cocktails) {
+        if ([cats containsObject:c.category]) {
+            [categoryListContent addObject:c];
+        }
+    }
+    [self.tableView reloadData];
+    [self.tableView setNeedsDisplay];
+}
+
+- (void)clearCategoryFilter
+{
+    filteredListContent = NO;
+    [categoryListContent removeAllObjects];
+    [self.tableView reloadData];
 }
 
 #pragma mark -
@@ -200,6 +236,8 @@
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [self.filteredListContent count];
+    } else if (filterByCategories) {
+        return [categoryListContent count];
     } else {
         return [self.cocktails count];
     }
@@ -222,6 +260,8 @@
     
 	if (tableView == self.searchDisplayController.searchResultsTableView) {
         cocktail = [self.filteredListContent objectAtIndex:indexPath.row];
+    } else if (filterByCategories) {
+        cocktail =  [categoryListContent objectAtIndex:indexPath.row];
     } else {
         cocktail = [self.cocktails objectAtIndex:indexPath.row];
     }
@@ -286,6 +326,8 @@
     
 	if (tableView == self.searchDisplayController.searchResultsTableView) {
         cocktail = [self.filteredListContent objectAtIndex:indexPath.row];
+    } else if (filterByCategories) {
+        cocktail = [categoryListContent objectAtIndex:indexPath.row];
     } else {
         cocktail = [self.cocktails objectAtIndex:indexPath.row];
     }

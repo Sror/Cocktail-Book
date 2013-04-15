@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CBCategoryTableViewDataSource.h"
 
 @class CBCocktailViewController;
 
-@interface CocktailListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CocktailListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
+    CBCategoryTableViewDataSource *categoriesDataSource;
+    BOOL filterByCategories;
+    NSMutableArray *categoryListContent;
+}
 
 @property (nonatomic, strong) IBOutlet CBCocktailViewController *cocktailView;
 
@@ -20,7 +25,5 @@
 @property (nonatomic, copy) NSString *savedSearchTerm;
 @property (nonatomic) NSInteger savedScopeButtonIndex;
 @property (nonatomic) BOOL searchWasActive;
-
-- (void)setTheme;
 
 @end

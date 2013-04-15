@@ -23,6 +23,7 @@
 		5C6A61AA16627F1000A6DCFC /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61A916627F1000A6DCFC /* tabbar_bg.png */; };
 		5C7C4660165D01B70018FFEE /* FavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C465F165D01B70018FFEE /* FavouritesViewController.m */; };
 		5C7C4664165D36600018FFEE /* cocktails.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5C7C4663165D36600018FFEE /* cocktails.xml */; };
+		5CCC499E171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */; };
 		5CCF09C1165B044A005035C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C0165B044A005035C5 /* UIKit.framework */; };
 		5CCF09C3165B044A005035C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C2165B044A005035C5 /* Foundation.framework */; };
 		5CCF09C5165B044A005035C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C4165B044A005035C5 /* CoreGraphics.framework */; };
@@ -61,6 +62,8 @@
 		5C7C465E165D01B70018FFEE /* FavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesViewController.h; sourceTree = "<group>"; };
 		5C7C465F165D01B70018FFEE /* FavouritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesViewController.m; sourceTree = "<group>"; };
 		5C7C4663165D36600018FFEE /* cocktails.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cocktails.xml; sourceTree = "<group>"; };
+		5CCC499C171C0BD700CC3A17 /* CBCategoryTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCategoryTableViewDataSource.h; sourceTree = "<group>"; };
+		5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCategoryTableViewDataSource.m; sourceTree = "<group>"; };
 		5CCF09BC165B044A005035C5 /* Cocktail Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cocktail Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCF09C0165B044A005035C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5CCF09C2165B044A005035C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,6 +184,8 @@
 				5CCF09F8165B9B71005035C5 /* CBCocktailViewController.h */,
 				5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */,
 				5C20A3FB1703044F009FB492 /* Cocktail View Controllers */,
+				5CCC499C171C0BD700CC3A17 /* CBCategoryTableViewDataSource.h */,
+				5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */,
 				5CCF09FA165B9B71005035C5 /* CBCategoriesViewController.h */,
 				5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */,
 				5C7C465E165D01B70018FFEE /* FavouritesViewController.h */,
@@ -326,6 +331,7 @@
 				5C20A3FA170303F8009FB492 /* CBCocktailIngredientsController.m in Sources */,
 				5C20A400170312A7009FB492 /* CBCocktailMethodController.m in Sources */,
 				5C20A403170312BA009FB492 /* CBCocktailSimilarController.m in Sources */,
+				5CCC499E171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
