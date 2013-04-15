@@ -1,15 +1,16 @@
 //
-//  CocktailListViewController.m
+//  CBCocktailListViewController.m
 //  Cocktail Book
 //
-//  Created by Ruaridh Sinclair Thomson on 20/11/2012.
-//  Copyright (c) 2012 Ruaridh Sinclair Thomson. All rights reserved.
+//  Created by Ruaridh Sinclair Thomson on 15/04/2013.
+//  Copyright (c) 2013 Ruaridh Sinclair Thomson. All rights reserved.
 //
+
+#import "CBCocktailListViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
 #import "CocktailBookAppDelegate.h"
-#import "CocktailListViewController.h"
 #import "CBCocktailViewController.h"
 #import "CBCocktail.h"
 
@@ -17,16 +18,25 @@
 
 #define COCKTAIL_CELL_ID @"Cocktail_Cell"
 
-@interface CocktailListViewController()
+@interface CBCocktailListViewController()
 @property (nonatomic, strong) NSArray *cocktails;
 
 - (void)populateCocktails;
 @end
 
-@implementation CocktailListViewController
+@implementation CBCocktailListViewController
 
 @synthesize cocktailView;
 @synthesize cocktails, listContent, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
+
+- (id)init
+{
+    self = [super initWithNibName:@"CBCocktailListViewController" bundle:nil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -36,6 +46,7 @@
     
     [self setupBarButtons];
     [self setupCategories];
+    //[self setupThemeElements];
     
     // create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.cocktails count]];
@@ -117,13 +128,23 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
     [self.navigationItem setBackBarButtonItem: backButton];
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(displayCategoryFilter)];
+    //UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(displayCategoryFilter)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"10-light-back-button.png"] style:UIBarButtonItemStylePlain target:self action:@selector(displayCategoryFilter)];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"10-light-back-button.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
     [self.navigationItem setRightBarButtonItem:rightButton];
+}
+
+- (void)setupThemeElements
+{
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.opaque = NO;
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"10-light-background.png"]];
 }
 
 - (void)displayCategoryFilter
 {
-    CGPoint anchor = CGPointMake(self.view.frame.size.width - 10, 35);
+    CGPoint anchor = CGPointMake(self.view.frame.size.width, 35);
     
     CGRect frame = CGRectMake(anchor.x, anchor.y, 175, 200);
     UITableView *categoryList = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
@@ -172,32 +193,32 @@
 #pragma mark -
 #pragma mark UITableView Delegates
 /*
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    
-    if(searchWasActive)
-        return nil;
-    
-    return cocktailRegions;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    return [cocktailRegions objectAtIndex:section];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    
-    if(searchWasActive)
-        return -1;
-    
-    return index % 2;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return [cocktailRegions count];
-}
+ - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+ 
+ if(searchWasActive)
+ return nil;
+ 
+ return cocktailRegions;
+ }
+ 
+ - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+ 
+ return [cocktailRegions objectAtIndex:section];
+ }
+ 
+ - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+ 
+ if(searchWasActive)
+ return -1;
+ 
+ return index % 2;
+ }
+ 
+ - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+ {
+ // Return the number of sections.
+ return [cocktailRegions count];
+ }
  
  */
 

@@ -14,9 +14,9 @@
 
 @implementation CBAboutViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"CBAboutViewController" bundle:nil];
     if (self) {
         // Custom initialization
     }
@@ -27,12 +27,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [self setupNavTitle];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setupNavTitle
+{
+    [self.navigationItem setTitle:@"About"];
 }
 
 @end

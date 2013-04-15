@@ -9,6 +9,10 @@
 #import "CocktailBookAppDelegate.h"
 
 #import "CBCocktail.h"
+#import "CBCocktailListViewController.h"
+#import "CBLeftPanelViewController.h"
+
+#import "JASidePanelController.h"
 
 #define kCustomiseTabBar        0   // compile time option to turn a custom tab bar on or off
 #define kDefaultTabSelection    0   // default tab value is 0 (tab #1)
@@ -24,43 +28,30 @@
 @implementation CocktailBookAppDelegate
 
 @synthesize window;
-@synthesize myTabBarController;
+@synthesize viewController;
 @synthesize cocktails;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
     // Set any data we need first
     [self loadCocktails];
     
-    // test for "WHICH_TAB_PREF_KEY" key value
-    NSUInteger testValue = [[NSUserDefaults standardUserDefaults] integerForKey:WHICH_TAB_PREF_KEY];
-	if (testValue == 0) {
-		// since no default values have been set (i.e. no preferences file created), create it here
-		NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:kDefaultTabSelection], WHICH_TAB_PREF_KEY, nil];
-		[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
-	}
+    [self setAppTheme];
     
-	// re-store previously selected tab from prefs
-	//
-	// if the More navigation controller was last selected, you must change the value of the "selectedViewController" property instead.
-	if ([[NSUserDefaults standardUserDefaults] integerForKey:WHICH_TAB_PREF_KEY] == NSNotFound) {
-		self.myTabBarController.selectedViewController = self.myTabBarController.moreNavigationController;
-	} else {
-		self.myTabBarController.selectedIndex = [[NSUserDefaults standardUserDefaults] integerForKey:WHICH_TAB_PREF_KEY];
-	}
-	
+    CBCocktailListViewController *cocktailListController = [[CBCocktailListViewController alloc] init];
+    CBLeftPanelViewController *leftPanelController = [[CBLeftPanelViewController alloc] init];
     
-	// listen for changes in view controller from the More screen
-	self.myTabBarController.moreNavigationController.delegate = self;
+    self.viewController = [[JASidePanelController alloc] init];
+    self.viewController.leftPanel = leftPanelController;
+    self.viewController.centerPanel = [[UINavigationController alloc] initWithRootViewController:cocktailListController];
+    //self.viewController.rightPanel = cocktailListController; //[[JARightViewController alloc] init];
     
-    
-    [myTabBarController setSelectedIndex:1]; // Start on the cocktails view
-    self.window.rootViewController = self.myTabBarController;
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -73,7 +64,6 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    [self saveTabOrder];
     [self saveCocktails];
 }
 
@@ -90,8 +80,15 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [self saveTabOrder];
+    //[self saveTabOrder];
     [self saveCocktails];
+}
+
+#pragma mark - App Theme
+
+- (void)setAppTheme
+{
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"10-light-menu-bar.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 #pragma mark - Multitasking
@@ -130,28 +127,6 @@
     [coc writeToFile:[self cocktailStoragePath] atomically:YES];
 }
 
-- (void)saveTabOrder
-{
-	// store the tab-order to preferences
-	//
-	NSMutableArray* classNames = [[NSMutableArray alloc] init];
-	for (UIViewController* controller in self.myTabBarController.viewControllers)
-	{
-		if ([controller isKindOfClass:[UINavigationController class]])
-		{
-			UINavigationController *navController = (UINavigationController *)controller;
-			
-			[classNames addObject:NSStringFromClass([navController.topViewController class])];
-		}
-		else
-		{
-			[classNames addObject:NSStringFromClass([controller class])];
-		}
-	}
-	
-	[[NSUserDefaults standardUserDefaults] setObject:classNames forKey:TAB_BAR_ORDER_PREF_KEY];
-}
-
 - (NSString *)cocktailStoragePath
 {
     NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -178,10 +153,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-	if (viewController == [self.myTabBarController.moreNavigationController.viewControllers objectAtIndex:0])
-	{
-		// returned to the More page
-	}
+    
 }
 
 @end

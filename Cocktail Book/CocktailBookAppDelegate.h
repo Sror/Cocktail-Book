@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "JASidePanelController.h"
+
 @class CocktailBookViewController;
 
-@interface CocktailBookAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, UINavigationControllerDelegate>
+@interface CocktailBookAppDelegate : UIResponder <UIApplicationDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (strong, nonatomic) IBOutlet UITabBarController *myTabBarController;
+@property (strong, nonatomic) IBOutlet JASidePanelController *viewController;
 
 @property (strong, nonatomic) NSArray *cocktails;
 

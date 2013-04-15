@@ -1,17 +1,18 @@
 //
-//  CocktailListViewController.h
+//  CBCocktailListViewController.h
 //  Cocktail Book
 //
-//  Created by Ruaridh Sinclair Thomson on 20/11/2012.
-//  Copyright (c) 2012 Ruaridh Sinclair Thomson. All rights reserved.
+//  Created by Ruaridh Sinclair Thomson on 15/04/2013.
+//  Copyright (c) 2013 Ruaridh Sinclair Thomson. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+
 #import "CBCategoryTableViewDataSource.h"
+#import "CBCocktailViewController.h"
 
-@class CBCocktailViewController;
-
-@interface CocktailListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface CBCocktailListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
     CBCategoryTableViewDataSource *categoriesDataSource;
     BOOL filterByCategories;
     NSMutableArray *categoryListContent;

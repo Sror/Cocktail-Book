@@ -20,9 +20,36 @@
 		5C253D51171B4A2400C0CE7A /* heart-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C253D4F171B4A2400C0CE7A /* heart-red@2x.png */; };
 		5C253D53171B57ED00C0CE7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C253D52171B57ED00C0CE7A /* QuartzCore.framework */; };
 		5C4298C6171C55500096A07E /* CBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4298C5171C55500096A07E /* CBAboutViewController.m */; };
-		5C6A61A61661003700A6DCFC /* tabbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */; };
-		5C6A61AA16627F1000A6DCFC /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61A916627F1000A6DCFC /* tabbar_bg.png */; };
+		5C4298CA171C80050096A07E /* CBCocktailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4298C8171C80050096A07E /* CBCocktailListViewController.m */; };
+		5C4298CB171C80050096A07E /* CBCocktailListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4298C9171C80050096A07E /* CBCocktailListViewController.xib */; };
 		5C7C4664165D36600018FFEE /* cocktails.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5C7C4663165D36600018FFEE /* cocktails.xml */; };
+		5CC4D2C1171C8BC4004C5A3F /* CBLeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4D2BF171C8BC4004C5A3F /* CBLeftPanelViewController.m */; };
+		5CC4D2C2171C8BC4004C5A3F /* CBLeftPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2C0171C8BC4004C5A3F /* CBLeftPanelViewController.xib */; };
+		5CC4D2C6171C938C004C5A3F /* CBAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2C5171C938C004C5A3F /* CBAboutViewController.xib */; };
+		5CC4D2E5171C9A9C004C5A3F /* 10-dark-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2CA171C9A9C004C5A3F /* 10-dark-back-button.png */; };
+		5CC4D2E6171C9A9C004C5A3F /* 10-dark-back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2CB171C9A9C004C5A3F /* 10-dark-back-button@2x.png */; };
+		5CC4D2E7171C9A9C004C5A3F /* 10-dark-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2CC171C9A9C004C5A3F /* 10-dark-background.jpg */; };
+		5CC4D2E8171C9A9C004C5A3F /* 10-dark-background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2CD171C9A9C004C5A3F /* 10-dark-background@2x.jpg */; };
+		5CC4D2E9171C9A9C004C5A3F /* 10-dark-menu-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2CE171C9A9C004C5A3F /* 10-dark-menu-bar.png */; };
+		5CC4D2EA171C9A9C004C5A3F /* 10-dark-menu-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2CF171C9A9C004C5A3F /* 10-dark-menu-bar@2x.png */; };
+		5CC4D2EB171C9A9C004C5A3F /* 10-dark-settings-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2D0171C9A9C004C5A3F /* 10-dark-settings-button.png */; };
+		5CC4D2EC171C9A9C004C5A3F /* 10-dark-settings-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2D1171C9A9C004C5A3F /* 10-dark-settings-button@2x.png */; };
+		5CC4D2ED171C9A9C004C5A3F /* 10-light-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2D3171C9A9C004C5A3F /* 10-light-back-button.png */; };
+		5CC4D2EE171C9A9C004C5A3F /* 10-light-back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2D4171C9A9C004C5A3F /* 10-light-back-button@2x.png */; };
+		5CC4D2EF171C9A9C004C5A3F /* 10-light-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2D5171C9A9C004C5A3F /* 10-light-background.jpg */; };
+		5CC4D2F0171C9A9C004C5A3F /* 10-light-background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2D6171C9A9C004C5A3F /* 10-light-background@2x.jpg */; };
+		5CC4D2F1171C9A9C004C5A3F /* 10-light-menu-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2D7171C9A9C004C5A3F /* 10-light-menu-bar.png */; };
+		5CC4D2F2171C9A9C004C5A3F /* 10-light-menu-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2D8171C9A9C004C5A3F /* 10-light-menu-bar@2x.png */; };
+		5CC4D2F3171C9A9C004C5A3F /* 10-light-settings-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2D9171C9A9C004C5A3F /* 10-light-settings-button.png */; };
+		5CC4D2F4171C9A9C004C5A3F /* 10-light-settings-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2DA171C9A9C004C5A3F /* 10-light-settings-button@2x.png */; };
+		5CC4D2F5171C9A9C004C5A3F /* 10-medium-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2DC171C9A9C004C5A3F /* 10-medium-back-button.png */; };
+		5CC4D2F6171C9A9C004C5A3F /* 10-medium-back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2DD171C9A9C004C5A3F /* 10-medium-back-button@2x.png */; };
+		5CC4D2F7171C9A9C004C5A3F /* 10-medium-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2DE171C9A9C004C5A3F /* 10-medium-background.jpg */; };
+		5CC4D2F8171C9A9C004C5A3F /* 10-medium-background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2DF171C9A9C004C5A3F /* 10-medium-background@2x.jpg */; };
+		5CC4D2F9171C9A9C004C5A3F /* 10-medium-menu-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2E0171C9A9C004C5A3F /* 10-medium-menu-bar.png */; };
+		5CC4D2FA171C9A9C004C5A3F /* 10-medium-menu-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2E1171C9A9C004C5A3F /* 10-medium-menu-bar@2x.png */; };
+		5CC4D2FB171C9A9C004C5A3F /* 10-medium-settings-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2E2171C9A9C004C5A3F /* 10-medium-settings-button.png */; };
+		5CC4D2FC171C9A9C004C5A3F /* 10-medium-settings-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC4D2E3171C9A9C004C5A3F /* 10-medium-settings-button@2x.png */; };
 		5CCC499E171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */; };
 		5CCF09C1165B044A005035C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C0165B044A005035C5 /* UIKit.framework */; };
 		5CCF09C3165B044A005035C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C2165B044A005035C5 /* Foundation.framework */; };
@@ -36,7 +63,6 @@
 		5CCF09DD165B044A005035C5 /* CocktailBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF09DB165B044A005035C5 /* CocktailBookViewController.xib */; };
 		5CCF0A00165B9B72005035C5 /* CBCocktailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */; };
 		5CCF0A03165B9B72005035C5 /* CBCocktail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09FE165B9B72005035C5 /* CBCocktail.m */; };
-		5CCF0A12165BDE0A005035C5 /* CocktailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF0A11165BDE0A005035C5 /* CocktailListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,9 +84,38 @@
 		5C253D52171B57ED00C0CE7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5C4298C4171C55500096A07E /* CBAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAboutViewController.h; sourceTree = "<group>"; };
 		5C4298C5171C55500096A07E /* CBAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAboutViewController.m; sourceTree = "<group>"; };
-		5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_bg@2x.png"; sourceTree = "<group>"; };
-		5C6A61A916627F1000A6DCFC /* tabbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_bg.png; sourceTree = "<group>"; };
+		5C4298C7171C80050096A07E /* CBCocktailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailListViewController.h; sourceTree = "<group>"; };
+		5C4298C8171C80050096A07E /* CBCocktailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailListViewController.m; sourceTree = "<group>"; };
+		5C4298C9171C80050096A07E /* CBCocktailListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBCocktailListViewController.xib; sourceTree = "<group>"; };
 		5C7C4663165D36600018FFEE /* cocktails.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cocktails.xml; sourceTree = "<group>"; };
+		5CC4D2BE171C8BC4004C5A3F /* CBLeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLeftPanelViewController.h; sourceTree = "<group>"; };
+		5CC4D2BF171C8BC4004C5A3F /* CBLeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLeftPanelViewController.m; sourceTree = "<group>"; };
+		5CC4D2C0171C8BC4004C5A3F /* CBLeftPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBLeftPanelViewController.xib; sourceTree = "<group>"; };
+		5CC4D2C5171C938C004C5A3F /* CBAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBAboutViewController.xib; sourceTree = "<group>"; };
+		5CC4D2CA171C9A9C004C5A3F /* 10-dark-back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-dark-back-button.png"; sourceTree = "<group>"; };
+		5CC4D2CB171C9A9C004C5A3F /* 10-dark-back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-dark-back-button@2x.png"; sourceTree = "<group>"; };
+		5CC4D2CC171C9A9C004C5A3F /* 10-dark-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10-dark-background.jpg"; sourceTree = "<group>"; };
+		5CC4D2CD171C9A9C004C5A3F /* 10-dark-background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10-dark-background@2x.jpg"; sourceTree = "<group>"; };
+		5CC4D2CE171C9A9C004C5A3F /* 10-dark-menu-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-dark-menu-bar.png"; sourceTree = "<group>"; };
+		5CC4D2CF171C9A9C004C5A3F /* 10-dark-menu-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-dark-menu-bar@2x.png"; sourceTree = "<group>"; };
+		5CC4D2D0171C9A9C004C5A3F /* 10-dark-settings-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-dark-settings-button.png"; sourceTree = "<group>"; };
+		5CC4D2D1171C9A9C004C5A3F /* 10-dark-settings-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-dark-settings-button@2x.png"; sourceTree = "<group>"; };
+		5CC4D2D3171C9A9C004C5A3F /* 10-light-back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-light-back-button.png"; sourceTree = "<group>"; };
+		5CC4D2D4171C9A9C004C5A3F /* 10-light-back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-light-back-button@2x.png"; sourceTree = "<group>"; };
+		5CC4D2D5171C9A9C004C5A3F /* 10-light-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10-light-background.jpg"; sourceTree = "<group>"; };
+		5CC4D2D6171C9A9C004C5A3F /* 10-light-background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10-light-background@2x.jpg"; sourceTree = "<group>"; };
+		5CC4D2D7171C9A9C004C5A3F /* 10-light-menu-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-light-menu-bar.png"; sourceTree = "<group>"; };
+		5CC4D2D8171C9A9C004C5A3F /* 10-light-menu-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-light-menu-bar@2x.png"; sourceTree = "<group>"; };
+		5CC4D2D9171C9A9C004C5A3F /* 10-light-settings-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-light-settings-button.png"; sourceTree = "<group>"; };
+		5CC4D2DA171C9A9C004C5A3F /* 10-light-settings-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-light-settings-button@2x.png"; sourceTree = "<group>"; };
+		5CC4D2DC171C9A9C004C5A3F /* 10-medium-back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-medium-back-button.png"; sourceTree = "<group>"; };
+		5CC4D2DD171C9A9C004C5A3F /* 10-medium-back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-medium-back-button@2x.png"; sourceTree = "<group>"; };
+		5CC4D2DE171C9A9C004C5A3F /* 10-medium-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10-medium-background.jpg"; sourceTree = "<group>"; };
+		5CC4D2DF171C9A9C004C5A3F /* 10-medium-background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10-medium-background@2x.jpg"; sourceTree = "<group>"; };
+		5CC4D2E0171C9A9C004C5A3F /* 10-medium-menu-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-medium-menu-bar.png"; sourceTree = "<group>"; };
+		5CC4D2E1171C9A9C004C5A3F /* 10-medium-menu-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-medium-menu-bar@2x.png"; sourceTree = "<group>"; };
+		5CC4D2E2171C9A9C004C5A3F /* 10-medium-settings-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-medium-settings-button.png"; sourceTree = "<group>"; };
+		5CC4D2E3171C9A9C004C5A3F /* 10-medium-settings-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-medium-settings-button@2x.png"; sourceTree = "<group>"; };
 		5CCC499C171C0BD700CC3A17 /* CBCategoryTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCategoryTableViewDataSource.h; sourceTree = "<group>"; };
 		5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCategoryTableViewDataSource.m; sourceTree = "<group>"; };
 		5CCF09BC165B044A005035C5 /* Cocktail Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cocktail Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,8 +136,6 @@
 		5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailViewController.m; sourceTree = "<group>"; };
 		5CCF09FD165B9B72005035C5 /* CBCocktail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktail.h; sourceTree = "<group>"; };
 		5CCF09FE165B9B72005035C5 /* CBCocktail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktail.m; sourceTree = "<group>"; };
-		5CCF0A10165BDE0A005035C5 /* CocktailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocktailListViewController.h; sourceTree = "<group>"; };
-		5CCF0A11165BDE0A005035C5 /* CocktailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocktailListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +158,12 @@
 			isa = PBXGroup;
 			children = (
 				5CCF09DB165B044A005035C5 /* CocktailBookViewController.xib */,
+				5C4298C9171C80050096A07E /* CBCocktailListViewController.xib */,
 				5C20A3F217030349009FB492 /* CocktailIngredients.xib */,
 				5C20A3F41703035A009FB492 /* CocktailMethod.xib */,
 				5C20A3F617030361009FB492 /* CocktailSimilar.xib */,
+				5CC4D2C0171C8BC4004C5A3F /* CBLeftPanelViewController.xib */,
+				5CC4D2C5171C938C004C5A3F /* CBAboutViewController.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -128,14 +184,84 @@
 		5C6A61A8166107BC00A6DCFC /* UIImages */ = {
 			isa = PBXGroup;
 			children = (
-				5C6A61A916627F1000A6DCFC /* tabbar_bg.png */,
-				5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */,
+				5CC4D2C7171C9A9C004C5A3F /* sloane */,
 				5C253D4E171B4A2400C0CE7A /* heart-red.png */,
 				5C253D4F171B4A2400C0CE7A /* heart-red@2x.png */,
 				5C253D4A171B46EE00C0CE7A /* heart.png */,
 				5C253D4B171B46EE00C0CE7A /* heart@2x.png */,
 			);
 			name = UIImages;
+			sourceTree = "<group>";
+		};
+		5CC4D2C7171C9A9C004C5A3F /* sloane */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4D2C8171C9A9C004C5A3F /* Assets */,
+				5CC4D2E4171C9A9C004C5A3F /* Font */,
+			);
+			path = sloane;
+			sourceTree = "<group>";
+		};
+		5CC4D2C8171C9A9C004C5A3F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4D2C9171C9A9C004C5A3F /* Dark */,
+				5CC4D2D2171C9A9C004C5A3F /* Light */,
+				5CC4D2DB171C9A9C004C5A3F /* Medium */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5CC4D2C9171C9A9C004C5A3F /* Dark */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4D2CA171C9A9C004C5A3F /* 10-dark-back-button.png */,
+				5CC4D2CB171C9A9C004C5A3F /* 10-dark-back-button@2x.png */,
+				5CC4D2CC171C9A9C004C5A3F /* 10-dark-background.jpg */,
+				5CC4D2CD171C9A9C004C5A3F /* 10-dark-background@2x.jpg */,
+				5CC4D2CE171C9A9C004C5A3F /* 10-dark-menu-bar.png */,
+				5CC4D2CF171C9A9C004C5A3F /* 10-dark-menu-bar@2x.png */,
+				5CC4D2D0171C9A9C004C5A3F /* 10-dark-settings-button.png */,
+				5CC4D2D1171C9A9C004C5A3F /* 10-dark-settings-button@2x.png */,
+			);
+			path = Dark;
+			sourceTree = "<group>";
+		};
+		5CC4D2D2171C9A9C004C5A3F /* Light */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4D2D3171C9A9C004C5A3F /* 10-light-back-button.png */,
+				5CC4D2D4171C9A9C004C5A3F /* 10-light-back-button@2x.png */,
+				5CC4D2D5171C9A9C004C5A3F /* 10-light-background.jpg */,
+				5CC4D2D6171C9A9C004C5A3F /* 10-light-background@2x.jpg */,
+				5CC4D2D7171C9A9C004C5A3F /* 10-light-menu-bar.png */,
+				5CC4D2D8171C9A9C004C5A3F /* 10-light-menu-bar@2x.png */,
+				5CC4D2D9171C9A9C004C5A3F /* 10-light-settings-button.png */,
+				5CC4D2DA171C9A9C004C5A3F /* 10-light-settings-button@2x.png */,
+			);
+			path = Light;
+			sourceTree = "<group>";
+		};
+		5CC4D2DB171C9A9C004C5A3F /* Medium */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4D2DC171C9A9C004C5A3F /* 10-medium-back-button.png */,
+				5CC4D2DD171C9A9C004C5A3F /* 10-medium-back-button@2x.png */,
+				5CC4D2DE171C9A9C004C5A3F /* 10-medium-background.jpg */,
+				5CC4D2DF171C9A9C004C5A3F /* 10-medium-background@2x.jpg */,
+				5CC4D2E0171C9A9C004C5A3F /* 10-medium-menu-bar.png */,
+				5CC4D2E1171C9A9C004C5A3F /* 10-medium-menu-bar@2x.png */,
+				5CC4D2E2171C9A9C004C5A3F /* 10-medium-settings-button.png */,
+				5CC4D2E3171C9A9C004C5A3F /* 10-medium-settings-button@2x.png */,
+			);
+			path = Medium;
+			sourceTree = "<group>";
+		};
+		5CC4D2E4171C9A9C004C5A3F /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		5CCF09B1165B044A005035C5 = {
@@ -176,13 +302,15 @@
 				5CCF09D0165B044A005035C5 /* CocktailBookAppDelegate.m */,
 				5CCF09FD165B9B72005035C5 /* CBCocktail.h */,
 				5CCF09FE165B9B72005035C5 /* CBCocktail.m */,
-				5CCF0A10165BDE0A005035C5 /* CocktailListViewController.h */,
-				5CCF0A11165BDE0A005035C5 /* CocktailListViewController.m */,
+				5C4298C7171C80050096A07E /* CBCocktailListViewController.h */,
+				5C4298C8171C80050096A07E /* CBCocktailListViewController.m */,
 				5CCF09F8165B9B71005035C5 /* CBCocktailViewController.h */,
 				5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */,
 				5C20A3FB1703044F009FB492 /* Cocktail View Controllers */,
 				5CCC499C171C0BD700CC3A17 /* CBCategoryTableViewDataSource.h */,
 				5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */,
+				5CC4D2BE171C8BC4004C5A3F /* CBLeftPanelViewController.h */,
+				5CC4D2BF171C8BC4004C5A3F /* CBLeftPanelViewController.m */,
 				5C4298C4171C55500096A07E /* CBAboutViewController.h */,
 				5C4298C5171C55500096A07E /* CBAboutViewController.m */,
 				5C6A61A8166107BC00A6DCFC /* UIImages */,
@@ -266,8 +394,6 @@
 				5CCF09D7165B044A005035C5 /* Default-568h@2x.png in Resources */,
 				5CCF09DD165B044A005035C5 /* CocktailBookViewController.xib in Resources */,
 				5C7C4664165D36600018FFEE /* cocktails.xml in Resources */,
-				5C6A61A61661003700A6DCFC /* tabbar_bg@2x.png in Resources */,
-				5C6A61AA16627F1000A6DCFC /* tabbar_bg.png in Resources */,
 				5C20A3F317030349009FB492 /* CocktailIngredients.xib in Resources */,
 				5C20A3F51703035A009FB492 /* CocktailMethod.xib in Resources */,
 				5C20A3F717030361009FB492 /* CocktailSimilar.xib in Resources */,
@@ -275,6 +401,33 @@
 				5C253D4D171B46EE00C0CE7A /* heart@2x.png in Resources */,
 				5C253D50171B4A2400C0CE7A /* heart-red.png in Resources */,
 				5C253D51171B4A2400C0CE7A /* heart-red@2x.png in Resources */,
+				5C4298CB171C80050096A07E /* CBCocktailListViewController.xib in Resources */,
+				5CC4D2C2171C8BC4004C5A3F /* CBLeftPanelViewController.xib in Resources */,
+				5CC4D2C6171C938C004C5A3F /* CBAboutViewController.xib in Resources */,
+				5CC4D2E5171C9A9C004C5A3F /* 10-dark-back-button.png in Resources */,
+				5CC4D2E6171C9A9C004C5A3F /* 10-dark-back-button@2x.png in Resources */,
+				5CC4D2E7171C9A9C004C5A3F /* 10-dark-background.jpg in Resources */,
+				5CC4D2E8171C9A9C004C5A3F /* 10-dark-background@2x.jpg in Resources */,
+				5CC4D2E9171C9A9C004C5A3F /* 10-dark-menu-bar.png in Resources */,
+				5CC4D2EA171C9A9C004C5A3F /* 10-dark-menu-bar@2x.png in Resources */,
+				5CC4D2EB171C9A9C004C5A3F /* 10-dark-settings-button.png in Resources */,
+				5CC4D2EC171C9A9C004C5A3F /* 10-dark-settings-button@2x.png in Resources */,
+				5CC4D2ED171C9A9C004C5A3F /* 10-light-back-button.png in Resources */,
+				5CC4D2EE171C9A9C004C5A3F /* 10-light-back-button@2x.png in Resources */,
+				5CC4D2EF171C9A9C004C5A3F /* 10-light-background.jpg in Resources */,
+				5CC4D2F0171C9A9C004C5A3F /* 10-light-background@2x.jpg in Resources */,
+				5CC4D2F1171C9A9C004C5A3F /* 10-light-menu-bar.png in Resources */,
+				5CC4D2F2171C9A9C004C5A3F /* 10-light-menu-bar@2x.png in Resources */,
+				5CC4D2F3171C9A9C004C5A3F /* 10-light-settings-button.png in Resources */,
+				5CC4D2F4171C9A9C004C5A3F /* 10-light-settings-button@2x.png in Resources */,
+				5CC4D2F5171C9A9C004C5A3F /* 10-medium-back-button.png in Resources */,
+				5CC4D2F6171C9A9C004C5A3F /* 10-medium-back-button@2x.png in Resources */,
+				5CC4D2F7171C9A9C004C5A3F /* 10-medium-background.jpg in Resources */,
+				5CC4D2F8171C9A9C004C5A3F /* 10-medium-background@2x.jpg in Resources */,
+				5CC4D2F9171C9A9C004C5A3F /* 10-medium-menu-bar.png in Resources */,
+				5CC4D2FA171C9A9C004C5A3F /* 10-medium-menu-bar@2x.png in Resources */,
+				5CC4D2FB171C9A9C004C5A3F /* 10-medium-settings-button.png in Resources */,
+				5CC4D2FC171C9A9C004C5A3F /* 10-medium-settings-button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,12 +473,13 @@
 				5CCF09D1165B044A005035C5 /* CocktailBookAppDelegate.m in Sources */,
 				5CCF0A00165B9B72005035C5 /* CBCocktailViewController.m in Sources */,
 				5CCF0A03165B9B72005035C5 /* CBCocktail.m in Sources */,
-				5CCF0A12165BDE0A005035C5 /* CocktailListViewController.m in Sources */,
 				5C20A3FA170303F8009FB492 /* CBCocktailIngredientsController.m in Sources */,
 				5C20A400170312A7009FB492 /* CBCocktailMethodController.m in Sources */,
 				5C20A403170312BA009FB492 /* CBCocktailSimilarController.m in Sources */,
 				5CCC499E171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m in Sources */,
 				5C4298C6171C55500096A07E /* CBAboutViewController.m in Sources */,
+				5C4298CA171C80050096A07E /* CBCocktailListViewController.m in Sources */,
+				5CC4D2C1171C8BC4004C5A3F /* CBLeftPanelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
