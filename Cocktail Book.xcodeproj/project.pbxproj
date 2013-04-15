@@ -19,9 +19,9 @@
 		5C253D50171B4A2400C0CE7A /* heart-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C253D4E171B4A2400C0CE7A /* heart-red.png */; };
 		5C253D51171B4A2400C0CE7A /* heart-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C253D4F171B4A2400C0CE7A /* heart-red@2x.png */; };
 		5C253D53171B57ED00C0CE7A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C253D52171B57ED00C0CE7A /* QuartzCore.framework */; };
+		5C4298C6171C55500096A07E /* CBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4298C5171C55500096A07E /* CBAboutViewController.m */; };
 		5C6A61A61661003700A6DCFC /* tabbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */; };
 		5C6A61AA16627F1000A6DCFC /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C6A61A916627F1000A6DCFC /* tabbar_bg.png */; };
-		5C7C4660165D01B70018FFEE /* FavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C465F165D01B70018FFEE /* FavouritesViewController.m */; };
 		5C7C4664165D36600018FFEE /* cocktails.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5C7C4663165D36600018FFEE /* cocktails.xml */; };
 		5CCC499E171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */; };
 		5CCF09C1165B044A005035C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCF09C0165B044A005035C5 /* UIKit.framework */; };
@@ -35,7 +35,6 @@
 		5CCF09D7165B044A005035C5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF09D6165B044A005035C5 /* Default-568h@2x.png */; };
 		5CCF09DD165B044A005035C5 /* CocktailBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF09DB165B044A005035C5 /* CocktailBookViewController.xib */; };
 		5CCF0A00165B9B72005035C5 /* CBCocktailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */; };
-		5CCF0A01165B9B72005035C5 /* CBCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */; };
 		5CCF0A03165B9B72005035C5 /* CBCocktail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09FE165B9B72005035C5 /* CBCocktail.m */; };
 		5CCF0A12165BDE0A005035C5 /* CocktailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF0A11165BDE0A005035C5 /* CocktailListViewController.m */; };
 /* End PBXBuildFile section */
@@ -57,10 +56,10 @@
 		5C253D4E171B4A2400C0CE7A /* heart-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-red.png"; sourceTree = "<group>"; };
 		5C253D4F171B4A2400C0CE7A /* heart-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-red@2x.png"; sourceTree = "<group>"; };
 		5C253D52171B57ED00C0CE7A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5C4298C4171C55500096A07E /* CBAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAboutViewController.h; sourceTree = "<group>"; };
+		5C4298C5171C55500096A07E /* CBAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAboutViewController.m; sourceTree = "<group>"; };
 		5C6A61A51661003700A6DCFC /* tabbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_bg@2x.png"; sourceTree = "<group>"; };
 		5C6A61A916627F1000A6DCFC /* tabbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_bg.png; sourceTree = "<group>"; };
-		5C7C465E165D01B70018FFEE /* FavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouritesViewController.h; sourceTree = "<group>"; };
-		5C7C465F165D01B70018FFEE /* FavouritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouritesViewController.m; sourceTree = "<group>"; };
 		5C7C4663165D36600018FFEE /* cocktails.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cocktails.xml; sourceTree = "<group>"; };
 		5CCC499C171C0BD700CC3A17 /* CBCategoryTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCategoryTableViewDataSource.h; sourceTree = "<group>"; };
 		5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCategoryTableViewDataSource.m; sourceTree = "<group>"; };
@@ -80,8 +79,6 @@
 		5CCF09DC165B044A005035C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CocktailBookViewController.xib; sourceTree = "<group>"; };
 		5CCF09F8165B9B71005035C5 /* CBCocktailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailViewController.h; sourceTree = "<group>"; };
 		5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailViewController.m; sourceTree = "<group>"; };
-		5CCF09FA165B9B71005035C5 /* CBCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCategoriesViewController.h; sourceTree = "<group>"; };
-		5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCategoriesViewController.m; sourceTree = "<group>"; };
 		5CCF09FD165B9B72005035C5 /* CBCocktail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktail.h; sourceTree = "<group>"; };
 		5CCF09FE165B9B72005035C5 /* CBCocktail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktail.m; sourceTree = "<group>"; };
 		5CCF0A10165BDE0A005035C5 /* CocktailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocktailListViewController.h; sourceTree = "<group>"; };
@@ -186,10 +183,8 @@
 				5C20A3FB1703044F009FB492 /* Cocktail View Controllers */,
 				5CCC499C171C0BD700CC3A17 /* CBCategoryTableViewDataSource.h */,
 				5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */,
-				5CCF09FA165B9B71005035C5 /* CBCategoriesViewController.h */,
-				5CCF09FB165B9B72005035C5 /* CBCategoriesViewController.m */,
-				5C7C465E165D01B70018FFEE /* FavouritesViewController.h */,
-				5C7C465F165D01B70018FFEE /* FavouritesViewController.m */,
+				5C4298C4171C55500096A07E /* CBAboutViewController.h */,
+				5C4298C5171C55500096A07E /* CBAboutViewController.m */,
 				5C6A61A8166107BC00A6DCFC /* UIImages */,
 				5CCF09C7165B044A005035C5 /* Supporting Files */,
 			);
@@ -324,14 +319,13 @@
 				5CCF09CD165B044A005035C5 /* main.m in Sources */,
 				5CCF09D1165B044A005035C5 /* CocktailBookAppDelegate.m in Sources */,
 				5CCF0A00165B9B72005035C5 /* CBCocktailViewController.m in Sources */,
-				5CCF0A01165B9B72005035C5 /* CBCategoriesViewController.m in Sources */,
 				5CCF0A03165B9B72005035C5 /* CBCocktail.m in Sources */,
 				5CCF0A12165BDE0A005035C5 /* CocktailListViewController.m in Sources */,
-				5C7C4660165D01B70018FFEE /* FavouritesViewController.m in Sources */,
 				5C20A3FA170303F8009FB492 /* CBCocktailIngredientsController.m in Sources */,
 				5C20A400170312A7009FB492 /* CBCocktailMethodController.m in Sources */,
 				5C20A403170312BA009FB492 /* CBCocktailSimilarController.m in Sources */,
 				5CCC499E171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m in Sources */,
+				5C4298C6171C55500096A07E /* CBAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

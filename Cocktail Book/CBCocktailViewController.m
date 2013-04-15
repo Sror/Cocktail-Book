@@ -34,11 +34,9 @@ static NSUInteger kNumberOfPages = 2;
 {
     [super viewWillAppear:animated];
     
-    [self.navigationItem setTitle:self.cocktail.name];
-    
+    [self setNavTitle];
     [self preparePageControl];
-    
-    [self setFavouriteButton];
+    //[self setFavouriteButton];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -52,6 +50,20 @@ static NSUInteger kNumberOfPages = 2;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setNavTitle
+{
+    [self.navigationItem setTitle:self.cocktail.name];
+    
+    UILabel* tlabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+    tlabel.text = self.navigationItem.title;
+    tlabel.textColor = [UIColor whiteColor];
+    tlabel.font = [UIFont fontWithName:@"Helvetica-Bold" size: 20.0];
+    tlabel.backgroundColor = [UIColor clearColor];
+    tlabel.adjustsFontSizeToFitWidth = YES;
+    tlabel.textAlignment = NSTextAlignmentCenter;
+    self.navigationItem.titleView = tlabel;
 }
 
 - (void)setFavouriteButton

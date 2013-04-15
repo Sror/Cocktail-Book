@@ -19,38 +19,30 @@
 
 @interface CocktailListViewController()
 @property (nonatomic, strong) NSArray *cocktails;
-@property (nonatomic, strong) NSArray *cocktailRegions;
 
 - (void)populateCocktails;
 @end
 
 @implementation CocktailListViewController
 
-@synthesize cocktails, cocktailRegions;
 @synthesize cocktailView;
-@synthesize listContent, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
+@synthesize cocktails, listContent, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
 
-// this is called when its tab is first tapped by the user
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
 	
-	//[self populateCocktails];
     [self.navigationItem setTitle:@"Cocktails"];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
-    [self.navigationItem setBackBarButtonItem: backButton];
-    
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(displayCategoryFilter)];
-    [self.navigationItem setRightBarButtonItem:rightButton];
+    [self setupBarButtons];
+    [self setupCategories];
     
     // create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.cocktails count]];
     categoryListContent = [NSMutableArray arrayWithCapacity:[self.cocktails count]];
 	
-	// restore search settings if they were saved in didReceiveMemoryWarning.
-    if (self.savedSearchTerm)
-	{
+	// Restore search settings if they were saved in didReceiveMemoryWarning.
+    if (self.savedSearchTerm) {
         [self.searchDisplayController setActive:self.searchWasActive];
         [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
         [self.searchDisplayController.searchBar setText:savedSearchTerm];
@@ -58,8 +50,7 @@
         self.savedSearchTerm = nil;
     }
     
-    [self setupCategories];
-    
+    // Add NotificationCenter Observers
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(categoryFilterChanged) name:@"CBCategoryFilterSelected" object:nil];
 }
 
@@ -109,35 +100,6 @@
     
     NSSortDescriptor *cocktailSortByName = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]; // sort cocktails by name
     cocktails = [cocktails sortedArrayUsingDescriptors:[NSArray arrayWithObject:cocktailSortByName]];
-    
-    //cocktailRegions = [NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil];
-    
-    /*
-    // Cocktails are already sorted, just need to add them to listContent
-    NSMutableArray *listTemp = [NSMutableArray array];
-    NSMutableArray *regionTemp = [NSMutableArray array];
-    NSMutableArray *cocktail_temp = [NSMutableArray array];
-    NSString *prevSection = @"A"; // We know we start with A.
-    
-    for (CBCocktail *c in cocktails) {
-        NSString *currSection = [[c.name substringToIndex:1] capitalizedString];
-        if (![currSection isEqualToString:prevSection]) {
-            if (![cocktail_temp count]==0) {
-                [listTemp addObject:[cocktail_temp copy]];
-                [regionTemp addObject:prevSection];
-            }
-            prevSection = currSection;
-            [cocktail_temp removeAllObjects];
-        }
-        
-        [cocktail_temp addObject:c];
-    }
-    
-    cocktailRegions = regionTemp;
-    listContent = listTemp;
-    */
-    
-    //NSLog(@"List length: %i - region length: %i", [listTemp count], [regionTemp count]);
 }
 
 - (void)hideSearchBar
@@ -148,6 +110,15 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
     self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
     [UIView commitAnimations];
+}
+
+- (void)setupBarButtons
+{
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
+    [self.navigationItem setBackBarButtonItem: backButton];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(displayCategoryFilter)];
+    [self.navigationItem setRightBarButtonItem:rightButton];
 }
 
 - (void)displayCategoryFilter
@@ -232,8 +203,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //return [[listContent objectAtIndex:section] count];
-    
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [self.filteredListContent count];
     } else if (filterByCategories) {
@@ -256,7 +225,7 @@
     // Get the item for the cell and set the cell title to the title for the item.
     // In this case, get the cocktail for this cell and set the title as the cocktail name.
     // Other properties you may set are a description ... image for the cell ... etc. Or make a custom cell.
-    CBCocktail *cocktail;// = [cocktails objectAtIndex:[indexPath row]];
+    CBCocktail *cocktail;
     
 	if (tableView == self.searchDisplayController.searchResultsTableView) {
         cocktail = [self.filteredListContent objectAtIndex:indexPath.row];
@@ -318,11 +287,7 @@
     // Deselect row
     //[tableView deselectRowAtIndexPath:indexPath animated:YES]; // We now do this when the view is loaded
     
-    //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	//cocktailView.title = cell.textLabel.text;
-    
-    //CBCocktail *tappedCocktail = [cocktails objectAtIndex:indexPath.row];
-    CBCocktail *cocktail; // = [cocktails objectAtIndex:[indexPath row]];
+    CBCocktail *cocktail;
     
 	if (tableView == self.searchDisplayController.searchResultsTableView) {
         cocktail = [self.filteredListContent objectAtIndex:indexPath.row];
@@ -353,11 +318,6 @@
 	 */
 	for (CBCocktail *cocktail in cocktails)
 	{
-        /*
-		if ([scope isEqualToString:@"All"] || [product.type isEqualToString:scope])
-		{
-		}
-         */
         NSComparisonResult result = [cocktail.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
         if (result == NSOrderedSame)
         {
@@ -386,15 +346,5 @@
     // Return YES to cause the search result table view to be reloaded.
     return YES;
 }
-
-#pragma mark -
-#pragma mark UIViewControllerRotation
-// Deprecated
-/*
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-	return YES; // support all orientations
-}
- */
 
 @end
