@@ -88,7 +88,8 @@
 
 - (void)setAppTheme
 {
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"10-light-menu-bar.png"] forBarMetrics:UIBarMetricsDefault];
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"10-light-menu-bar.png"] forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 #pragma mark - Multitasking

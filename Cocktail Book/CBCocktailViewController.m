@@ -35,6 +35,7 @@ static NSUInteger kNumberOfPages = 2;
     [super viewWillAppear:animated];
     
     [self setNavTitle];
+    //[self setUIElements];
     [self preparePageControl];
     //[self setFavouriteButton];
 }
@@ -55,7 +56,9 @@ static NSUInteger kNumberOfPages = 2;
 - (void)setNavTitle
 {
     [self.navigationItem setTitle:self.cocktail.name];
+    //[self.navigationItem setTitle:@"~"];
     
+    /*
     UILabel* tlabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
     tlabel.text = self.navigationItem.title;
     tlabel.textColor = [UIColor whiteColor];
@@ -64,6 +67,26 @@ static NSUInteger kNumberOfPages = 2;
     tlabel.adjustsFontSizeToFitWidth = YES;
     tlabel.textAlignment = NSTextAlignmentCenter;
     self.navigationItem.titleView = tlabel;
+     */
+}
+
+- (void)setUIElements
+{
+    UIColor *shadowColor = [UIColor colorWithWhite:1.0 alpha:1.0];
+    UIFont *font = [UIFont fontWithName:@"Charlemagne Std" size:21.0];
+    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:1.0f forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIColor blackColor], UITextAttributeTextColor,
+                                                          font, UITextAttributeFont, shadowColor, UITextAttributeTextShadowColor,
+                                                          [NSValue valueWithCGSize:CGSizeMake(0.0,1.0)], UITextAttributeTextShadowOffset,
+                                                          nil]];
+    [self.navigationController.navigationBar setNeedsDisplay];
+    /*
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"10-light-background.jpg"]];
+    [self.view addSubview:background];
+    [self.view addSubview:scrollView];
+    [self.view addSubview:pageControl];
+     */
 }
 
 - (void)setFavouriteButton

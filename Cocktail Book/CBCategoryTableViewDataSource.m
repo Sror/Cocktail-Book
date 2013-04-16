@@ -48,6 +48,10 @@
     else
         cell.accessoryType = UITableViewCellAccessoryNone;
     
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    UIFont *font = [UIFont fontWithName:@"Cochin" size:16.0];
+    cell.textLabel.font = font;
+    
     return cell;
 }
 
@@ -89,6 +93,12 @@
  return YES;
  }
  */
+
+// Override to support custom cell size
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 32;
+}
 
 #pragma mark TableView Data Source
 

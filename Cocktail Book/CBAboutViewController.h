@@ -10,4 +10,6 @@
 
 @interface CBAboutViewController : UIViewController
 
+@property (nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end

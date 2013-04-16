@@ -63,6 +63,19 @@
 		5CCF09DD165B044A005035C5 /* CocktailBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCF09DB165B044A005035C5 /* CocktailBookViewController.xib */; };
 		5CCF0A00165B9B72005035C5 /* CBCocktailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */; };
 		5CCF0A03165B9B72005035C5 /* CBCocktail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCF09FE165B9B72005035C5 /* CBCocktail.m */; };
+		5CF993F1171D92E20006361F /* Bernhard Modern.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CF993F0171D92E20006361F /* Bernhard Modern.ttf */; };
+		5CF993F3171DA6BB0006361F /* CBCocktailListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CF993F2171DA6BB0006361F /* CBCocktailListTableViewCell.xib */; };
+		5CF993F6171DAAD90006361F /* CBCocktailListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF993F5171DAAD90006361F /* CBCocktailListCell.m */; };
+		5CF99408171DCB2F0006361F /* white-menu-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF99406171DCB2F0006361F /* white-menu-bar.png */; };
+		5CF99409171DCB2F0006361F /* white-menu-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF99407171DCB2F0006361F /* white-menu-bar@2x.png */; };
+		5CF9940B171DCEFD0006361F /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF9940A171DCEFD0006361F /* blank.png */; };
+		5CF9940E171DCF6F0006361F /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF9940C171DCF6F0006361F /* gear.png */; };
+		5CF9940F171DCF6F0006361F /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF9940D171DCF6F0006361F /* gear@2x.png */; };
+		5CF99412171DD13E0006361F /* martini.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF99410171DD13E0006361F /* martini.png */; };
+		5CF99413171DD13E0006361F /* martini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF99411171DD13E0006361F /* martini@2x.png */; };
+		5CF99417171DD86A0006361F /* glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF99414171DD86A0006361F /* glyph.png */; };
+		5CF9941C171DD8BB0006361F /* arrow-west.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF9941A171DD8BB0006361F /* arrow-west.png */; };
+		5CF9941D171DD8BB0006361F /* arrow-west@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CF9941B171DD8BB0006361F /* arrow-west@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +149,20 @@
 		5CCF09F9165B9B71005035C5 /* CBCocktailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailViewController.m; sourceTree = "<group>"; };
 		5CCF09FD165B9B72005035C5 /* CBCocktail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktail.h; sourceTree = "<group>"; };
 		5CCF09FE165B9B72005035C5 /* CBCocktail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktail.m; sourceTree = "<group>"; };
+		5CF993F0171D92E20006361F /* Bernhard Modern.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bernhard Modern.ttf"; sourceTree = "<group>"; };
+		5CF993F2171DA6BB0006361F /* CBCocktailListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBCocktailListTableViewCell.xib; sourceTree = "<group>"; };
+		5CF993F4171DAAD90006361F /* CBCocktailListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCocktailListCell.h; sourceTree = "<group>"; };
+		5CF993F5171DAAD90006361F /* CBCocktailListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCocktailListCell.m; sourceTree = "<group>"; };
+		5CF99406171DCB2F0006361F /* white-menu-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-menu-bar.png"; sourceTree = "<group>"; };
+		5CF99407171DCB2F0006361F /* white-menu-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-menu-bar@2x.png"; sourceTree = "<group>"; };
+		5CF9940A171DCEFD0006361F /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
+		5CF9940C171DCF6F0006361F /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		5CF9940D171DCF6F0006361F /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		5CF99410171DD13E0006361F /* martini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = martini.png; sourceTree = "<group>"; };
+		5CF99411171DD13E0006361F /* martini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "martini@2x.png"; sourceTree = "<group>"; };
+		5CF99414171DD86A0006361F /* glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyph.png; sourceTree = "<group>"; };
+		5CF9941A171DD8BB0006361F /* arrow-west.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-west.png"; sourceTree = "<group>"; };
+		5CF9941B171DD8BB0006361F /* arrow-west@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-west@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +191,7 @@
 				5C20A3F617030361009FB492 /* CocktailSimilar.xib */,
 				5CC4D2C0171C8BC4004C5A3F /* CBLeftPanelViewController.xib */,
 				5CC4D2C5171C938C004C5A3F /* CBAboutViewController.xib */,
+				5CF993F2171DA6BB0006361F /* CBCocktailListTableViewCell.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -184,7 +212,9 @@
 		5C6A61A8166107BC00A6DCFC /* UIImages */ = {
 			isa = PBXGroup;
 			children = (
+				5CC4D2E4171C9A9C004C5A3F /* Font */,
 				5CC4D2C7171C9A9C004C5A3F /* sloane */,
+				5CF99401171DCAA50006361F /* white */,
 				5C253D4E171B4A2400C0CE7A /* heart-red.png */,
 				5C253D4F171B4A2400C0CE7A /* heart-red@2x.png */,
 				5C253D4A171B46EE00C0CE7A /* heart.png */,
@@ -197,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				5CC4D2C8171C9A9C004C5A3F /* Assets */,
-				5CC4D2E4171C9A9C004C5A3F /* Font */,
 			);
 			path = sloane;
 			sourceTree = "<group>";
@@ -260,8 +289,10 @@
 		5CC4D2E4171C9A9C004C5A3F /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				5CF993F0171D92E20006361F /* Bernhard Modern.ttf */,
 			);
-			path = Font;
+			name = Font;
+			path = sloane/Font;
 			sourceTree = "<group>";
 		};
 		5CCF09B1165B044A005035C5 = {
@@ -309,6 +340,8 @@
 				5C20A3FB1703044F009FB492 /* Cocktail View Controllers */,
 				5CCC499C171C0BD700CC3A17 /* CBCategoryTableViewDataSource.h */,
 				5CCC499D171C0BD700CC3A17 /* CBCategoryTableViewDataSource.m */,
+				5CF993F4171DAAD90006361F /* CBCocktailListCell.h */,
+				5CF993F5171DAAD90006361F /* CBCocktailListCell.m */,
 				5CC4D2BE171C8BC4004C5A3F /* CBLeftPanelViewController.h */,
 				5CC4D2BF171C8BC4004C5A3F /* CBLeftPanelViewController.m */,
 				5C4298C4171C55500096A07E /* CBAboutViewController.h */,
@@ -332,6 +365,23 @@
 				5CCF09D6165B044A005035C5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5CF99401171DCAA50006361F /* white */ = {
+			isa = PBXGroup;
+			children = (
+				5CF99414171DD86A0006361F /* glyph.png */,
+				5CF99410171DD13E0006361F /* martini.png */,
+				5CF99411171DD13E0006361F /* martini@2x.png */,
+				5CF9940C171DCF6F0006361F /* gear.png */,
+				5CF9940D171DCF6F0006361F /* gear@2x.png */,
+				5CF9940A171DCEFD0006361F /* blank.png */,
+				5CF99406171DCB2F0006361F /* white-menu-bar.png */,
+				5CF99407171DCB2F0006361F /* white-menu-bar@2x.png */,
+				5CF9941A171DD8BB0006361F /* arrow-west.png */,
+				5CF9941B171DD8BB0006361F /* arrow-west@2x.png */,
+			);
+			name = white;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +478,18 @@
 				5CC4D2FA171C9A9C004C5A3F /* 10-medium-menu-bar@2x.png in Resources */,
 				5CC4D2FB171C9A9C004C5A3F /* 10-medium-settings-button.png in Resources */,
 				5CC4D2FC171C9A9C004C5A3F /* 10-medium-settings-button@2x.png in Resources */,
+				5CF993F1171D92E20006361F /* Bernhard Modern.ttf in Resources */,
+				5CF993F3171DA6BB0006361F /* CBCocktailListTableViewCell.xib in Resources */,
+				5CF99408171DCB2F0006361F /* white-menu-bar.png in Resources */,
+				5CF99409171DCB2F0006361F /* white-menu-bar@2x.png in Resources */,
+				5CF9940B171DCEFD0006361F /* blank.png in Resources */,
+				5CF9940E171DCF6F0006361F /* gear.png in Resources */,
+				5CF9940F171DCF6F0006361F /* gear@2x.png in Resources */,
+				5CF99412171DD13E0006361F /* martini.png in Resources */,
+				5CF99413171DD13E0006361F /* martini@2x.png in Resources */,
+				5CF99417171DD86A0006361F /* glyph.png in Resources */,
+				5CF9941C171DD8BB0006361F /* arrow-west.png in Resources */,
+				5CF9941D171DD8BB0006361F /* arrow-west@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +542,7 @@
 				5C4298C6171C55500096A07E /* CBAboutViewController.m in Sources */,
 				5C4298CA171C80050096A07E /* CBCocktailListViewController.m in Sources */,
 				5CC4D2C1171C8BC4004C5A3F /* CBLeftPanelViewController.m in Sources */,
+				5CF993F6171DAAD90006361F /* CBCocktailListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

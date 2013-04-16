@@ -12,13 +12,16 @@
 #import "CBCategoryTableViewDataSource.h"
 #import "CBCocktailViewController.h"
 
-@interface CBCocktailListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface CBCocktailListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     CBCategoryTableViewDataSource *categoriesDataSource;
     BOOL filterByCategories;
     NSMutableArray *categoryListContent;
+    
+    IBOutlet UITableView *cocktailTableView;
 }
 
 @property (nonatomic, strong) IBOutlet CBCocktailViewController *cocktailView;
+@property (nonatomic, strong) IBOutlet UITableView *cocktailTableView;
 
 @property (nonatomic, strong) NSArray *listContent;
 @property (nonatomic, strong) NSMutableArray *filteredListContent;

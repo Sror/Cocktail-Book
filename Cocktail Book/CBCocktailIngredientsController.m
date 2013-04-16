@@ -23,10 +23,16 @@
 
 - (void)viewDidLoad
 {
+    //[self setupUIElements];
     [self setupDescription];
     [self setupIngredientsList];
     [self setupNumServed];
     [self setupPage];
+}
+
+- (void)setupUIElements
+{
+    [self.view setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)setupIngredientsList
@@ -90,7 +96,7 @@
 
 - (void)setupPage
 {
-    pageTextView.text = [NSString stringWithFormat:@"PAGE IN BOOK: %@", cocktail.pageInBook];
+    pageTextView.text = [NSString stringWithFormat:@"%@  \u2022  PAGE IN BOOK: %@", cocktail.category, cocktail.pageInBook];
     
     [self resizeView:pageTextView];
     [self alignView:pageTextView belowView:servesTextView withAnimationTime:1.0 andOffset:0];
