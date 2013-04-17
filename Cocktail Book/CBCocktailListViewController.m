@@ -6,11 +6,10 @@
 //  Copyright (c) 2013 Ruaridh Sinclair Thomson. All rights reserved.
 //
 
-#import "CBCocktailListViewController.h"
-
 #import <QuartzCore/QuartzCore.h>
 
 #import "CocktailBookAppDelegate.h"
+#import "CBCocktailListViewController.h"
 #import "CBCocktailViewController.h"
 #import "CBCocktail.h"
 #import "CBCocktailListCell.h"
@@ -23,6 +22,12 @@
 @property (nonatomic, strong) NSArray *cocktails;
 
 - (void)populateCocktails;
+- (void)hideSearchBar;
+- (void)setupBarButtonsAndUIElements;
+- (void)displayCategoryFilter;
+- (void)setupCategories;
+- (void)categoryFilterChanged;
+- (void)clearCategoryFilter;
 @end
 
 @implementation CBCocktailListViewController
@@ -134,11 +139,6 @@
     [self.navigationItem setBackBarButtonItem:backButton];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
-    //self.navigationController.navigationBar.translucent = YES;
-    /*
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"10-light-background.jpg"]];
-    [self.view addSubview:background];
-     */
     [self.view addSubview:self.cocktailTableView];
     
     UIImage *settingsButtonImage = [UIImage imageNamed:@"martini.png"];
@@ -159,8 +159,6 @@
     
     self.cocktailTableView.backgroundColor = [UIColor clearColor];
     
-    
-    //UIColor *titleColor = [UIColor colorWithRed:150.0f/255.0f green:149.0f/255.0f blue:149.0f/255.0f alpha:1.0f];
     UIColor *shadowColor = [UIColor colorWithWhite:1.0 alpha:1.0];
     UIFont *font = [UIFont fontWithName:@"Academy Engraved LET" size:24.0];
     [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:1.0f forBarMetrics:UIBarMetricsDefault];
@@ -171,7 +169,21 @@
                                                           nil]];
     
     // Remove SearchBar background
-    self.searchDisplayController.searchBar.backgroundImage = [UIImage imageNamed:@"blank.png"];
+    for (id subview in self.searchDisplayController.searchBar.subviews) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            [subview removeFromSuperview];
+        }
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
+            
+            [(UITextField *)subview setBorderStyle:UITextBorderStyleRoundedRect];
+            for (UIView *subsubview in [(UITextField *)subview subviews]) {
+                if ([subsubview isKindOfClass:NSClassFromString(@"UITextFieldRoundedRectBackgroundView")]) {
+                    [subsubview removeFromSuperview];
+                }
+            }
+        }
+    }
+    
 }
 
 - (void)displayCategoryFilter
@@ -224,35 +236,6 @@
 
 #pragma mark -
 #pragma mark UITableView Delegates
-/*
- - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
- 
- if(searchWasActive)
- return nil;
- 
- return cocktailRegions;
- }
- 
- - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
- 
- return [cocktailRegions objectAtIndex:section];
- }
- 
- - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
- 
- if(searchWasActive)
- return -1;
- 
- return index % 2;
- }
- 
- - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
- {
- // Return the number of sections.
- return [cocktailRegions count];
- }
- 
- */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -267,20 +250,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:COCKTAIL_CELL_ID];
     CBCocktailListCell *cell = [tableView dequeueReusableCellWithIdentifier:COCKTAIL_CELL_ID];
     
     if (!cell) {
-        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:COCKTAIL_CELL_ID];
-        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-		//cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CBCocktailListTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     
-    // Get the item for the cell and set the cell title to the title for the item.
-    // In this case, get the cocktail for this cell and set the title as the cocktail name.
-    // Other properties you may set are a description ... image for the cell ... etc. Or make a custom cell.
     CBCocktail *cocktail;
     
 	if (tableView == self.searchDisplayController.searchResultsTableView) {
@@ -300,45 +276,6 @@
     return cell;
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
 // Override to support custom cell size
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -349,9 +286,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Deselect row
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES]; // We now do this when the view is loaded
-    
     CBCocktail *cocktail;
     
 	if (tableView == self.searchDisplayController.searchResultsTableView) {

@@ -9,19 +9,24 @@
 #import "CBLeftPanelViewController.h"
 #import "CBCocktailListViewController.h"
 #import "CBAboutViewController.h"
+#import "CBLeftPanelListCell.h"
 
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 
 #define LIST_CELL_ID @"SideMenuList"
 
-@interface CBLeftPanelViewController ()
+@interface CBLeftPanelViewController () {
+int selectedIndex;
+}
 
+- (void)setupTableContents;
+- (void)setupUIElements;
 @end
 
 @implementation CBLeftPanelViewController
 
-@synthesize listContent;
+@synthesize listContent, listContentIcons, menuTableView;
 
 - (id)init
 {
@@ -40,6 +45,11 @@
     [self setupTableContents];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self setupUIElements];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -49,6 +59,20 @@
 - (void)setupTableContents
 {
     listContent = [NSArray arrayWithObjects:@"Cocktails", @"Guides", @"About", nil];
+    listContentIcons = [NSArray arrayWithObjects:@"martini-dark.png", @"book.png", @"persondot.png", nil];
+    
+    [menuTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+}
+
+- (void)setupUIElements
+{
+    //[self.view setBackgroundColor:[UIColor clearColor]];
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menu-background.jpg"]];
+    [self.view addSubview:background];
+    
+    [menuTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [menuTableView setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:menuTableView];
 }
 
 #pragma mark -
@@ -61,63 +85,31 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:LIST_CELL_ID];
+    CBLeftPanelListCell *cell = [tableView dequeueReusableCellWithIdentifier:LIST_CELL_ID];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:LIST_CELL_ID];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CBLeftPanelListCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
-    [[cell textLabel] setText:[listContent objectAtIndex:indexPath.row]];
+    [cell.nameLabel setText:[listContent objectAtIndex:indexPath.row]];
+    [cell.iconView setImage:[UIImage imageNamed:[listContentIcons objectAtIndex:indexPath.row]]];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
+// Override to support custom cell size
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
 
 #pragma mark TableView Data Source
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Deselect row
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    // We would do something in page==1, if we were going to write all the guides.
     int page = indexPath.row;
     if (page==0) {
         self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[[CBCocktailListViewController alloc] init]];

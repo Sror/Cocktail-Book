@@ -15,6 +15,11 @@ static NSUInteger kNumberOfPages = 2;
 
 @interface CBCocktailViewController ()
 
+- (void)setNavTitle;
+- (void)setUIElements;
+- (void)setFavouriteButton;
+- (void)changeFavouriteState;
+
 @end
 
 @implementation CBCocktailViewController
@@ -56,7 +61,6 @@ static NSUInteger kNumberOfPages = 2;
 - (void)setNavTitle
 {
     [self.navigationItem setTitle:self.cocktail.name];
-    //[self.navigationItem setTitle:@"~"];
     
     /*
     UILabel* tlabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
@@ -194,15 +198,6 @@ static NSUInteger kNumberOfPages = 2;
     [self loadScrollViewWithPage:page + 1];
     
     // A possible optimization would be to unload the views+controllers which are no longer visible
-    
-    /*
-    // change the title
-    if (page==0) {
-        [self.navigationItem setTitle:@"Ingredients"];
-    } else if (page==1) {
-        [self.navigationItem setTitle:@"Method"];
-    }
-     */
 }
 
 // At the begin of scroll dragging, reset the boolean used when scrolls originate from the UIPageControl

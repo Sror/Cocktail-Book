@@ -9,7 +9,8 @@
 #import "CBAboutViewController.h"
 
 @interface CBAboutViewController ()
-
+- (void)setupNavTitle;
+- (void)setupUIElements;
 @end
 
 @implementation CBAboutViewController
@@ -82,14 +83,6 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingsButton];
     self.cocktailTableView.backgroundColor = [UIColor clearColor];
     */
-    
-    UIColor *titleColor = [UIColor colorWithRed:150.0f/255.0f green:149.0f/255.0f blue:149.0f/255.0f alpha:1.0f];
-    UIColor* shadowColor = [UIColor colorWithWhite:1.0 alpha:1.0];
-    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:1.0f forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                          titleColor, UITextAttributeTextColor,
-                                                          [UIFont boldSystemFontOfSize:17], UITextAttributeFont, shadowColor, UITextAttributeTextShadowColor,  [NSValue valueWithCGSize:CGSizeMake(0.0,1.0)], UITextAttributeTextShadowOffset,
-                                                          nil]];
 }
 
 @end

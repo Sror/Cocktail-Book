@@ -9,6 +9,13 @@
 #import "CBCocktailMethodController.h"
 #import "CBCocktail.h"
 
+@interface CBCocktailMethodController()
+
+- (void)setupMethod;
+- (void)setupBartendersTip;
+
+@end
+
 @implementation CBCocktailMethodController : UIViewController
 
 @synthesize methodTextView, barTipTextView;

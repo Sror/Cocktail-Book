@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CBLeftPanelViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface CBLeftPanelViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     
 }
 
 @property (nonatomic, strong) NSArray *listContent;
+@property (nonatomic) NSArray *listContentIcons;
+@property (nonatomic) IBOutlet UITableView *menuTableView;
 
 @end

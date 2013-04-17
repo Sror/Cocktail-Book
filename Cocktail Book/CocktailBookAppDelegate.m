@@ -38,7 +38,7 @@
     // Set any data we need first
     [self loadCocktails];
     
-    [self setAppTheme];
+    self.window.backgroundColor = [UIColor blackColor];
     
     CBCocktailListViewController *cocktailListController = [[CBCocktailListViewController alloc] init];
     CBLeftPanelViewController *leftPanelController = [[CBLeftPanelViewController alloc] init];
@@ -46,7 +46,6 @@
     self.viewController = [[JASidePanelController alloc] init];
     self.viewController.leftPanel = leftPanelController;
     self.viewController.centerPanel = [[UINavigationController alloc] initWithRootViewController:cocktailListController];
-    //self.viewController.rightPanel = cocktailListController; //[[JARightViewController alloc] init];
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
@@ -82,14 +81,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     //[self saveTabOrder];
     [self saveCocktails];
-}
-
-#pragma mark - App Theme
-
-- (void)setAppTheme
-{
-    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"10-light-menu-bar.png"] forBarMetrics:UIBarMetricsDefault];
-    
 }
 
 #pragma mark - Multitasking

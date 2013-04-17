@@ -9,6 +9,15 @@
 #import "CBCocktailIngredientsController.h"
 #import "CBCocktail.h"
 
+@interface CBCocktailIngredientsController()
+
+- (void)setupIngredientsList;
+- (void)setupDescription;
+- (void)setupNumServed;
+- (void)setupPage;
+
+@end
+
 @implementation CBCocktailIngredientsController : UIViewController
 
 @synthesize ingredientsListField, descriptionField, servesTextView, pageTextView;
@@ -23,16 +32,10 @@
 
 - (void)viewDidLoad
 {
-    //[self setupUIElements];
     [self setupDescription];
     [self setupIngredientsList];
     [self setupNumServed];
     [self setupPage];
-}
-
-- (void)setupUIElements
-{
-    [self.view setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)setupIngredientsList

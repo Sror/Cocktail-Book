@@ -12,6 +12,7 @@
 @interface CBCocktailViewController : UIViewController <UIScrollViewDelegate> {
     IBOutlet UIScrollView *scrollView;
     IBOutlet UIPageControl *pageControl;
+    
     NSMutableArray *viewControllers;
     BOOL pageControlUsed;
 }
